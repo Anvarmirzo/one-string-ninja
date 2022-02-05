@@ -1,0 +1,85 @@
+.p-welcome {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  row-gap: 64px;
+}
+
+.p-welcome__img {
+  display: block;
+  margin: 0 auto;
+  opacity: 0;
+  visibility: hidden;
+  width: 268px;
+  position: relative;
+  transition: opacity 0.3s;
+  height: 0;
+
+  &.active {
+    height: 310px;
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.p-welcome-bottom {
+  position: relative;
+  border-radius: 36px 36px 0 0;
+  height: 42.5%;
+  min-height: 228px;
+  width: 100%;
+  padding: 56px 32px;
+  background-color: #fff;
+}
+
+.p-welcome-nav {
+  position: absolute;
+  bottom: 56px;
+  left: 32px;
+  right: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .alert-btn {
+    min-width: 168px;
+  }
+}
+
+.p-welcome-menu {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+}
+
+.p-welcome__control {
+  display: block;
+  width: 6px;
+  height: 6px;
+  border-radius: 10px;
+  padding: 0;
+  border-width: 0;
+  background-color: #E23C08;
+  transition: all 0.3s;
+
+  &.active {
+    width: 32px;
+  }
+}
+
+.p-welcome__text {
+  display: flex;
+  flex-direction: column;
+  row-gap: 24px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s;
+  height: 0;
+
+  &.active {
+    opacity: 1;
+    visibility: visible;
+    height: auto;
+  }
+}
