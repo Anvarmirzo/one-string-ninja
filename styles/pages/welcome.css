@@ -1,0 +1,114 @@
+.p-welcome {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  row-gap: 64px;
+}
+
+.p-welcome__img {
+  display: block;
+  margin: 0 auto;
+  opacity: 0;
+  visibility: hidden;
+  width: 268px;
+  position: relative;
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+  height: 0;
+}
+
+.p-welcome__img.active {
+  height: 310px;
+  opacity: 1;
+  visibility: visible;
+}
+
+.p-welcome-bottom {
+  position: relative;
+  border-radius: 36px 36px 0 0;
+  height: 42.5%;
+  min-height: 228px;
+  width: 100%;
+  padding: 56px 32px;
+  background-color: #fff;
+}
+
+.p-welcome-nav {
+  position: absolute;
+  bottom: 56px;
+  left: 32px;
+  right: 32px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.p-welcome-nav .alert-btn {
+  min-width: 168px;
+}
+
+.p-welcome-menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-column-gap: 10px;
+          column-gap: 10px;
+}
+
+.p-welcome__control {
+  display: block;
+  width: 6px;
+  height: 6px;
+  border-radius: 10px;
+  padding: 0;
+  border-width: 0;
+  background-color: #E23C08;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.p-welcome__control.active {
+  width: 32px;
+}
+
+.p-welcome__text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 24px;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+  height: 0;
+}
+
+.p-welcome__text.active {
+  opacity: 1;
+  visibility: visible;
+  height: auto;
+}
+/*# sourceMappingURL=welcome.css.map */

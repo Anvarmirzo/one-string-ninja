@@ -193,8 +193,8 @@ section {
   visibility: hidden;
   width: 268px;
   position: relative;
-  -webkit-transition: opacity 0.3s;
-  transition: opacity 0.3s;
+  -webkit-transition: opacity 0.5s;
+  transition: opacity 0.5s;
   height: 0;
 }
 
@@ -253,8 +253,8 @@ section {
   padding: 0;
   border-width: 0;
   background-color: #E23C08;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
 }
 
 .p-welcome__control.active {
@@ -272,8 +272,8 @@ section {
   row-gap: 24px;
   opacity: 0;
   visibility: hidden;
-  -webkit-transition: opacity 0.3s;
-  transition: opacity 0.3s;
+  -webkit-transition: opacity 0.5s;
+  transition: opacity 0.5s;
   height: 0;
 }
 
