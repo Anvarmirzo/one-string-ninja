@@ -6,172 +6,374 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>One-String Ninja</title>
-	<link rel="stylesheet" href="./css/main.css?t=1644154918391">
+	<link rel="stylesheet" href="./css/main.css?t=1644164774461">
 </head>
 
 <body>
 	<input type="hidden" id="hold-current-page">
 	<main>
 		<img class="p__bg" src="./img/bg-decor.svg" alt="">
+
 		<div class="progress" id="progress">
-			<div class="progress-text">
-				<div>Давайте знакомиться</div>
-				<div>
-					<span id="display-current-page">1</span>/<span id="pages-count">12</span>
-				</div>
-			</div>
-			<div class="progress-bar">
-				<div class="progress-bar__line" id="progress-bar-line"></div>
-			</div>
+	<div class="progress-text">
+		<div>Давайте знакомиться</div>
+		<div>
+			<span id="display-current-page">1</span>/<span id="pages-count">12</span>
 		</div>
+	</div>
+	<div class="progress-bar">
+		<div class="progress-bar__line" id="progress-bar-line"></div>
+	</div>
+</div>
 
 		<!-- ! First Page -->
-		<section class="p-welcome active" data-page="0">
-			<!-- Slider images -->
-			<div id="welcome-slider__images">
-				<img class="p-welcome__img active" src="./img/p-w-1.svg" alt="">
-				<img class="p-welcome__img" src="./img/p-w-2.svg" alt="">
-				<img class="p-welcome__img" src="./img/p-w-3.svg" alt="">
-			</div>
-			<div class="p-welcome-bottom">
-				<!-- Slider text -->
-				<div id="welcome-slider__text">
-					<article class="p-welcome__text active">
-						<h1 class="title">Добро пожаловать!</h1>
-						<p class="subtitle">One-String Ninja — это инновационная система
-							обучения игре на гитаре.
-						</p>
-					</article>
-					<article class="p-welcome__text">
-						<h1 class="title">Идеально подходит для начинающих гитаристов.</h1>
-					</article>
-					<article class="p-welcome__text">
-						<h1 class="title">Ты сможешь сыграть известную песню на гитаре за 5 минут с нуля!</h1>
-					</article>
-				</div>
-				<nav id="welcome-slider__contorls" class="p-welcome-nav">
-					<ul class="p-welcome-menu">
-						<li>
-							<button class="p-welcome__control active" data-control="0" type="button">
-								<span class="sr-only">1-slide</span>
-							</button>
-						</li>
-						<li>
-							<button class="p-welcome__control" data-control="1" type="button">
-								<span class="sr-only">2-slide</span>
-							</button>
-						</li>
-						<li>
-							<button class="p-welcome__control" data-control="2" type="button">
-								<span class="sr-only">3-slide</span>
-							</button>
-						</li>
-					</ul>
-					<button class="alert-btn" id="next-btn" type="button">Вперед!</button>
-				</nav>
-			</div>
-		</section>
-
-		<!-- ! Second page -->
-		<section class="p-name p--padding" data-page="1">
-			<form id="name-form">
-				<div id="test"></div>
-				<label class="title" for="name">Как тебя зовут ?</label>
-				<input class="input" type="text" name="name" id="name" placeholder="Имя или псевдоним">
-				<p>Напиши свое настоящее имя или творческий псевдоним</p>
-				<button data-next-btn="2" class="alert-btn">Дальше</button>
-			</form>
-		</section>
-
-		<!-- ! Third page -->
-		<section class="p-name-result p--padding" data-page="2">
-			<div class="p-name-result-top">
-				<h2 class="title" for="name">
-					<span class="p-name-result__username" id="username"></span>, ты в правильном месте!
-				</h2>
-				<p class="subtitle">Скоро ты почувствуешь себя намного увереннее с гитарой и сможешь сыграть много известных
-					песен!
+<section class="p-welcome active" data-page="0">
+	<!-- Slider images -->
+	<div id="welcome-slider__images">
+		<img class="p-welcome__img active" src="./img/p-w-1.svg" alt="">
+		<img class="p-welcome__img" src="./img/p-w-2.svg" alt="">
+		<img class="p-welcome__img" src="./img/p-w-3.svg" alt="">
+	</div>
+	<div class="p-welcome-bottom">
+		<!-- Slider text -->
+		<div id="welcome-slider__text">
+			<article class="p-welcome__text active">
+				<h1 class="title">Добро пожаловать!</h1>
+				<p class="subtitle">One-String Ninja — это инновационная система
+					обучения игре на гитаре.
 				</p>
-			</div>
-			<div>
-				<img src="./img/p-name.svg" alt="">
-			</div>
-			<button data-next-btn="2" class="alert-btn">Дальше</button>
-		</section>
-
-		<!-- ! Fifth page -->
-		<section class="p-year p--padding" data-page="3">
-			<h2 class="title" for="name">Сколько тебе лет?</h2>
-			<ul class="year-btns" id="year-btns">
+			</article>
+			<article class="p-welcome__text">
+				<h1 class="title">Идеально подходит для начинающих гитаристов.</h1>
+			</article>
+			<article class="p-welcome__text">
+				<h1 class="title">Ты сможешь сыграть известную песню на гитаре за 5 минут с нуля!</h1>
+			</article>
+		</div>
+		<nav id="welcome-slider__contorls" class="p-welcome-nav">
+			<ul class="p-welcome-menu">
 				<li>
-					<button class="year-btn" data-next-btn="3" data-year="6-17" type="button">
-						<img class="man-icon" src="./img/users/6.svg" alt="">
-						<span>6 – 17</span>
-						<svg class="chevron-icon" width="16" height="16" viewBox="0 0 16 16" fill="none"
-							xmlns="http://www.w3.org/2000/svg">
-							<path d="M5.14285 2.85715L10.2857 8L5.14285 13.1429" stroke="#3F170D" stroke-width="1.8"
-								stroke-linecap="round" stroke-linejoin="round" />
-						</svg>
+					<button class="p-welcome__control active" data-control="0" type="button">
+						<span class="sr-only">1-slide</span>
 					</button>
 				</li>
 				<li>
-					<button class="year-btn" data-next-btn="3" data-year="18-29" type="button">
-						<img class="man-icon" src="./img/users/18.svg" alt="">
-						<span>18 – 29</span>
-						<svg class="chevron-icon" width="16" height="16" viewBox="0 0 16 16" fill="none"
-							xmlns="http://www.w3.org/2000/svg">
-							<path d="M5.14285 2.85715L10.2857 8L5.14285 13.1429" stroke="#3F170D" stroke-width="1.8"
-								stroke-linecap="round" stroke-linejoin="round" />
-						</svg>
+					<button class="p-welcome__control" data-control="1" type="button">
+						<span class="sr-only">2-slide</span>
 					</button>
 				</li>
 				<li>
-					<button class="year-btn" data-next-btn="3" data-year="30-39" type="button">
-						<img class="man-icon" src="./img/users/30.svg" alt="">
-						<span>30 – 39</span>
-						<svg class="chevron-icon" width="16" height="16" viewBox="0 0 16 16" fill="none"
-							xmlns="http://www.w3.org/2000/svg">
-							<path d="M5.14285 2.85715L10.2857 8L5.14285 13.1429" stroke="#3F170D" stroke-width="1.8"
-								stroke-linecap="round" stroke-linejoin="round" />
-						</svg>
-					</button>
-				</li>
-				<li>
-					<button class="year-btn" data-next-btn="3" data-year="40-49" type="button">
-						<img class="man-icon" src="./img/users/40.svg" alt="">
-						<span>40 – 49</span>
-						<svg class="chevron-icon" width="16" height="16" viewBox="0 0 16 16" fill="none"
-							xmlns="http://www.w3.org/2000/svg">
-							<path d="M5.14285 2.85715L10.2857 8L5.14285 13.1429" stroke="#3F170D" stroke-width="1.8"
-								stroke-linecap="round" stroke-linejoin="round" />
-						</svg>
-					</button>
-				</li>
-				<li>
-					<button class="year-btn" data-next-btn="3" data-year="50+" type="button">
-						<img class="man-icon" src="./img/users/50.svg" alt="">
-						<span>50 +</span>
-						<svg class="chevron-icon" width="16" height="16" viewBox="0 0 16 16" fill="none"
-							xmlns="http://www.w3.org/2000/svg">
-							<path d="M5.14285 2.85715L10.2857 8L5.14285 13.1429" stroke="#3F170D" stroke-width="1.8"
-								stroke-linecap="round" stroke-linejoin="round" />
-						</svg>
+					<button class="p-welcome__control" data-control="2" type="button">
+						<span class="sr-only">3-slide</span>
 					</button>
 				</li>
 			</ul>
+			<button class="alert-btn" id="next-btn" type="button">Вперед!</button>
+		</nav>
+	</div>
+</section>
 
-			<article class="year-hint">
-				<h3>Нет времени на упражнения:</h3>
-				<p>Для обучения самое главное
-					это регулярно играть, хотя бы
-					<span>по 5 минут в день</span>.
-					Спустя месяц это будет целых
-					<span>150 минут</span>!
-				</p>
-			</article>
-		</section>
+		<!-- ! Second page -->
+<section class="p-name p--padding" data-page="1">
+	<form id="name-form">
+		<div id="test"></div>
+		<label class="title" for="name">Как тебя зовут ?</label>
+		<input class="input" type="text" name="name" id="name" placeholder="Имя или псевдоним">
+		<p>Напиши свое настоящее имя или творческий псевдоним</p>
+		<button data-next-btn="2" class="alert-btn">Дальше</button>
+	</form>
+</section>
+
+		<!-- ! Third page -->
+<section class="p-name-result p--padding" data-page="2">
+	<div class="p-name-result-top">
+		<h2 class="title" for="name">
+			<span class="p-name-result__username" id="username"></span>, ты в правильном месте!
+		</h2>
+		<p class="subtitle">Скоро ты почувствуешь себя намного увереннее с гитарой и сможешь сыграть много известных
+			песен!
+		</p>
+	</div>
+	<div>
+		<img src="./img/p-name.svg" alt="">
+	</div>
+	<button data-next-btn="2" class="alert-btn">Дальше</button>
+</section>
+
+		<!-- ! Fourth page -->
+<section class="p-year p--padding" data-page="3">
+	<h2 class="title" for="name">Сколько тебе лет?</h2>
+	<ul class="year-btns" id="year-btns">
+		<li>
+			<button class="year-btn" data-next-btn="3" data-year="6-17" type="button">
+				<img class="man-icon" src="./img/users/6.svg" alt="">
+				<span>6 – 17</span>
+				<svg class="chevron-icon" width="16" height="16" viewBox="0 0 16 16" fill="none"
+					xmlns="http://www.w3.org/2000/svg">
+					<path d="M5.14285 2.85715L10.2857 8L5.14285 13.1429" stroke="#3F170D" stroke-width="1.8"
+						stroke-linecap="round" stroke-linejoin="round" />
+				</svg>
+			</button>
+		</li>
+		<li>
+			<button class="year-btn" data-next-btn="3" data-year="18-29" type="button">
+				<img class="man-icon" src="./img/users/18.svg" alt="">
+				<span>18 – 29</span>
+				<svg class="chevron-icon" width="16" height="16" viewBox="0 0 16 16" fill="none"
+					xmlns="http://www.w3.org/2000/svg">
+					<path d="M5.14285 2.85715L10.2857 8L5.14285 13.1429" stroke="#3F170D" stroke-width="1.8"
+						stroke-linecap="round" stroke-linejoin="round" />
+				</svg>
+			</button>
+		</li>
+		<li>
+			<button class="year-btn" data-next-btn="3" data-year="30-39" type="button">
+				<img class="man-icon" src="./img/users/30.svg" alt="">
+				<span>30 – 39</span>
+				<svg class="chevron-icon" width="16" height="16" viewBox="0 0 16 16" fill="none"
+					xmlns="http://www.w3.org/2000/svg">
+					<path d="M5.14285 2.85715L10.2857 8L5.14285 13.1429" stroke="#3F170D" stroke-width="1.8"
+						stroke-linecap="round" stroke-linejoin="round" />
+				</svg>
+			</button>
+		</li>
+		<li>
+			<button class="year-btn" data-next-btn="3" data-year="40-49" type="button">
+				<img class="man-icon" src="./img/users/40.svg" alt="">
+				<span>40 – 49</span>
+				<svg class="chevron-icon" width="16" height="16" viewBox="0 0 16 16" fill="none"
+					xmlns="http://www.w3.org/2000/svg">
+					<path d="M5.14285 2.85715L10.2857 8L5.14285 13.1429" stroke="#3F170D" stroke-width="1.8"
+						stroke-linecap="round" stroke-linejoin="round" />
+				</svg>
+			</button>
+		</li>
+		<li>
+			<button class="year-btn" data-next-btn="3" data-year="50+" type="button">
+				<img class="man-icon" src="./img/users/50.svg" alt="">
+				<span>50 +</span>
+				<svg class="chevron-icon" width="16" height="16" viewBox="0 0 16 16" fill="none"
+					xmlns="http://www.w3.org/2000/svg">
+					<path d="M5.14285 2.85715L10.2857 8L5.14285 13.1429" stroke="#3F170D" stroke-width="1.8"
+						stroke-linecap="round" stroke-linejoin="round" />
+				</svg>
+			</button>
+		</li>
+	</ul>
+
+	<article class="year-hint">
+		<h3>Нет времени на упражнения:</h3>
+		<p>Для обучения самое главное
+			это регулярно играть, хотя бы
+			<span>по 5 минут в день</span>.
+			Спустя месяц это будет целых
+			<span>150 минут</span>!
+		</p>
+	</article>
+</section>
+
+		<!-- ! Fifth page -->
+<section class="p-year p-has-guitar p--padding" data-page="4">
+	<h2 class="title" for="name">У тебя есть гитара?</h2>
+	<ul class="year-btns" id="has-guitar-btns">
+		<li>
+			<button class="year-btn" data-next-btn="4" data-hasguitar="yes" type="button">
+				<span class="icon-wrapper" data-hasguitar="yes">
+					<svg width="26" height="22" viewBox="0 0 26 22" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+						<path
+							d="M24.9625 4.67497L10.6625 20.35C9.69997 21.4501 8.05003 21.4501 7.08749 20.35L1.03747 13.6125C0.212502 12.65 0.212502 11.1375 1.17495 10.175C2.13749 9.35002 3.64995 9.35002 4.61249 10.3125L8.875 15.125L21.3875 1.51249C22.35 0.549943 23.8625 0.412465 24.825 1.37501C25.7875 2.19998 25.7875 3.85001 24.9625 4.67497Z" />
+					</svg>
+				</span>
+				<span>Есть</span>
+				<svg class="chevron-icon" width="16" height="16" viewBox="0 0 16 16" fill="none"
+					xmlns="http://www.w3.org/2000/svg">
+					<path d="M5.14285 2.85715L10.2857 8L5.14285 13.1429" stroke="#3F170D" stroke-width="1.8"
+						stroke-linecap="round" stroke-linejoin="round" />
+				</svg>
+			</button>
+		</li>
+		<li>
+			<button class="year-btn" data-next-btn="4" data-has-guitar="no" type="button">
+				<span class="icon-wrapper" data-hasguitar="no">
+					<svg width="22" height="22" viewBox="0 0 22 22" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+						<path
+							d="M21.0375 21.0375C20.2126 21.8625 18.8375 21.8625 18.0125 21.0375L11.0001 14.0251L3.98758 21.0375C3.16261 21.8625 1.78754 21.8625 0.962568 21.0375C0.137599 20.2126 0.137599 18.8375 0.962568 18.0125L7.97504 11.0001L0.962568 3.98758C0.137599 3.16261 0.137599 1.78754 0.962568 0.962568C1.78754 0.137599 3.16261 0.137599 3.98758 0.962568L11.0001 7.97504L18.0125 0.962568C18.8375 0.137599 20.2126 0.137599 21.0375 0.962568C21.8625 1.78754 21.8625 3.16261 21.0375 3.98758L14.0251 11.0001L21.0375 18.0125C21.8625 18.8375 21.8625 20.2125 21.0375 21.0375Z" />
+					</svg>
+				</span>
+				<span>Нет</span>
+				<svg class="chevron-icon" width="16" height="16" viewBox="0 0 16 16" fill="none"
+					xmlns="http://www.w3.org/2000/svg">
+					<path d="M5.14285 2.85715L10.2857 8L5.14285 13.1429" stroke="#3F170D" stroke-width="1.8"
+						stroke-linecap="round" stroke-linejoin="round" />
+				</svg>
+			</button>
+		</li>
+	</ul>
+
+	<div class="year-hint year-hint--gap">
+		<article>
+			<h3>Нереалистичные цели:</h3>
+			<p>Лучше ставить цели, которых легко достичь. Лучше всего учиться играть простые и узнаваемые песни.</p>
+		</article>
+		<article>
+			<h3>Боязнь ошибок:</h3>
+			<p>Думайте об упражнениях и уроках скорее как об удовольствии, сохраняйте концентрацию.</p>
+		</article>
+	</div>
+</section>
+
+		<!-- ! Sixth page -->
+<section class="p-year p-has-guitar p--padding" data-page="5">
+	<h2 class="title" for="name">Играешь на гитаре?</h2>
+	<ul class="year-btns" id="year-btns">
+		<li>
+			<button class="year-btn" data-next-btn="5" data-play="noob" type="button">
+				<img class="smile-icon" width="44px" height="44px" src="./img/smiles/thinking.svg" alt="">
+				<span class="p-has-guitar__answer">Нет, пока не умею</span>
+				<svg class="chevron-icon" width="16" height="16" viewBox="0 0 16 16" fill="none"
+					xmlns="http://www.w3.org/2000/svg">
+					<path d="M5.14285 2.85715L10.2857 8L5.14285 13.1429" stroke="#3F170D" stroke-width="1.8"
+						stroke-linecap="round" stroke-linejoin="round" />
+				</svg>
+			</button>
+		</li>
+		<li>
+			<button class="year-btn" data-next-btn="5" data-play="middle" type="button">
+				<img class="smile-icon" width="44px" height="44px" src="./img/smiles/smile.svg" alt="">
+				<span class="p-has-guitar__answer">Немного, сыграю пару песен</span>
+				<svg class="chevron-icon" width="16" height="16" viewBox="0 0 16 16" fill="none"
+					xmlns="http://www.w3.org/2000/svg">
+					<path d="M5.14285 2.85715L10.2857 8L5.14285 13.1429" stroke="#3F170D" stroke-width="1.8"
+						stroke-linecap="round" stroke-linejoin="round" />
+				</svg>
+			</button>
+		</li>
+		<li>
+			<button class="year-btn" data-next-btn="5" data-play="pro" type="button">
+				<img class="smile-icon" width="44px" height="44px" src="./img/smiles/cool.svg" alt="">
+				<span class="p-has-guitar__answer">Да, знаю много песен</span>
+				<svg class="chevron-icon" width="16" height="16" viewBox="0 0 16 16" fill="none"
+					xmlns="http://www.w3.org/2000/svg">
+					<path d="M5.14285 2.85715L10.2857 8L5.14285 13.1429" stroke="#3F170D" stroke-width="1.8"
+						stroke-linecap="round" stroke-linejoin="round" />
+				</svg>
+			</button>
+		</li>
+	</ul>
+
+	<div class="year-hint year-hint--gap">
+		<article>
+			<h3>Недостаток поддержки</h3>
+			<p>Правильный стиль преподавания с положительным подкреплением позволяет тебе быстро добиваться успеха.</p>
+		</article>
+		<article>
+			<h3>Ваш инструмент в плохой форме</h3>
+			<p>Залог хорошего звучания это настроенная гитара.</p>
+			<p>Настройка занимает пару минут, а наслаждаться игрой можно часами.</p>
+		</article>
+	</div>
+</section>
+
+		<!-- ! Seventh page -->
+<section class="p-year p-has-guitar p--padding" data-page="6">
+	<h2 class="title" for="name">Насколько часто хотелось бы играть?</h2>
+	<ul class="year-btns" id="during-btns">
+		<li>
+			<button class="year-btn" data-next-btn="6" data-during="1-a-week" type="button">
+				<img src="./img/calendar.svg" alt="">
+				<span class="p-has-guitar__answer">Раз в неделю</span>
+				<svg class="chevron-icon" width="16" height="16" viewBox="0 0 16 16" fill="none"
+					xmlns="http://www.w3.org/2000/svg">
+					<path d="M5.14285 2.85715L10.2857 8L5.14285 13.1429" stroke="#3F170D" stroke-width="1.8"
+						stroke-linecap="round" stroke-linejoin="round" />
+				</svg>
+			</button>
+		</li>
+		<li>
+			<button class="year-btn" data-next-btn="6" data-during="several-a-week" type="button">
+				<span class="icon-wrapper">
+					<img src="./img/calendar.svg" alt="">
+				</span>
+				<span class="p-has-guitar__answer">Несколько раз в неделю</span>
+				<svg class="chevron-icon" width="16" height="16" viewBox="0 0 16 16" fill="none"
+					xmlns="http://www.w3.org/2000/svg">
+					<path d="M5.14285 2.85715L10.2857 8L5.14285 13.1429" stroke="#3F170D" stroke-width="1.8"
+						stroke-linecap="round" stroke-linejoin="round" />
+				</svg>
+			</button>
+		</li>
+		<li>
+			<button class="year-btn" data-next-btn="6" data-during="every-day" type="button">
+				<span class="icon-wrapper">
+					<img src="./img/calendar.svg" alt="">
+				</span>
+				<span class="p-has-guitar__answer">Каждый день</span>
+				<svg class="chevron-icon" width="16" height="16" viewBox="0 0 16 16" fill="none"
+					xmlns="http://www.w3.org/2000/svg">
+					<path d="M5.14285 2.85715L10.2857 8L5.14285 13.1429" stroke="#3F170D" stroke-width="1.8"
+						stroke-linecap="round" stroke-linejoin="round" />
+				</svg>
+			</button>
+		</li>
+	</ul>
+
+	<article class="year-hint">
+		<h3>Боязнь ошибок и недостаток удовольствия</h3>
+		<p>Думайте об упражнениях и уроках скорее как об удовольствии.</p>
+		<p>Не нужно думать об ошибках, сохраняйте концентрацию.</p>
+	</article>
+</section>
+
+		<!-- ! Eight page -->
+<section class="p-year p-has-guitar p--padding" data-page="7">
+	<h2 class="title" for="name">Были ли у тебя такие мысли по поводу гитары?</h2>
+	<ul class="year-btns" id="during-btns">
+		<li>
+			<button class="year-btn" data-next-btn="7" data-during="1-a-week" type="button">
+				<img src="./img/calendar.svg" alt="">
+				<span class="p-has-guitar__answer">Раз в неделю</span>
+				<svg class="chevron-icon" width="16" height="16" viewBox="0 0 16 16" fill="none"
+					xmlns="http://www.w3.org/2000/svg">
+					<path d="M5.14285 2.85715L10.2857 8L5.14285 13.1429" stroke="#3F170D" stroke-width="1.8"
+						stroke-linecap="round" stroke-linejoin="round" />
+				</svg>
+			</button>
+		</li>
+		<li>
+			<button class="year-btn" data-next-btn="7" data-during="several-a-week" type="button">
+				<span class="icon-wrapper">
+					<img src="./img/calendar.svg" alt="">
+				</span>
+				<span class="p-has-guitar__answer">Несколько раз в неделю</span>
+				<svg class="chevron-icon" width="16" height="16" viewBox="0 0 16 16" fill="none"
+					xmlns="http://www.w3.org/2000/svg">
+					<path d="M5.14285 2.85715L10.2857 8L5.14285 13.1429" stroke="#3F170D" stroke-width="1.8"
+						stroke-linecap="round" stroke-linejoin="round" />
+				</svg>
+			</button>
+		</li>
+		<li>
+			<button class="year-btn" data-next-btn="7" data-during="every-day" type="button">
+				<span class="icon-wrapper">
+					<img src="./img/calendar.svg" alt="">
+				</span>
+				<span class="p-has-guitar__answer">Каждый день</span>
+				<svg class="chevron-icon" width="16" height="16" viewBox="0 0 16 16" fill="none"
+					xmlns="http://www.w3.org/2000/svg">
+					<path d="M5.14285 2.85715L10.2857 8L5.14285 13.1429" stroke="#3F170D" stroke-width="1.8"
+						stroke-linecap="round" stroke-linejoin="round" />
+				</svg>
+			</button>
+		</li>
+	</ul>
+	<article class="year-hint">
+		<h3>Боязнь ошибок и недостаток удовольствия</h3>
+		<p>Думайте об упражнениях и уроках скорее как об удовольствии.</p>
+		<p>Не нужно думать об ошибках, сохраняйте концентрацию.</p>
+	</article>
+</section>
 	</main>
-	<script src="./js/main.js?t=1644154918391"></script>
+	<script src="./js/main.js?t=1644164774461"></script>
 </body>
 
 </html>

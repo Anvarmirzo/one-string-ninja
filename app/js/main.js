@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function (e) {
-  "use strict";
+  ("use strict");
   // Active page index
   let currentPageIndex = 0;
   let pagesLength = 0;
@@ -8,6 +8,8 @@ document.addEventListener("DOMContentLoaded", function (e) {
   const formData = {
     name: "",
     year: "",
+    hasGuitar: "",
+    during: "",
   };
 
   // Set pages length
@@ -43,7 +45,6 @@ document.addEventListener("DOMContentLoaded", function (e) {
           );
           currentProgressCount.textContent = currentPageIndex;
           if (currentPageIndex) progress.classList.add("active");
-
           bar.style.width = `${(currentPageIndex / pagesLength) * 100}%`;
         }
       });
@@ -127,9 +128,48 @@ document.addEventListener("DOMContentLoaded", function (e) {
       event.preventDefault();
 
       // Save user age
+      if (event.target.closest("button")) {
+        if (!event.target.dataset.year) {
+          formData.year = event.target.parentElement.dataset.year;
+        } else {
+          formData.year = event.target.dataset.year;
+        }
+      }
+    });
+  })();
+
+  // Has guitar form
+  (() => {
+    const hasGuitarForm = document.getElementById("has-guitar-btns");
+    hasGuitarForm.addEventListener("click", (event) => {
       if (event.target.closest("[data-next-btn]")) {
-        formData.year = event.target.dataset.year;
-        console.log(formData);
+        if (!event.target.dataset.hasGuitar) {
+          formData.hasGuitar = event.target.parentElement.dataset.hasguitar;
+          if (!formData.hasGuitar) {
+            formData.hasGuitar =
+              event.target.parentElement.parentElement.dataset.hasguitar;
+          }
+        } else {
+          formData.hasGuitar = event.target.dataset.hasguitar;
+        }
+      }
+    });
+  })();
+
+  // During form
+  (() => {
+    const duringForm = document.getElementById("during-btns");
+    duringForm.addEventListener("click", (event) => {
+      if (event.target.closest("[data-next-btn]")) {
+        if (!event.target.dataset.hasGuitar) {
+          formData.during = event.target.parentElement.dataset.during;
+          if (!formData.during) {
+            formData.during =
+              event.target.parentElement.parentElement.dataset.during;
+          }
+        } else {
+          formData.during = event.target.dataset.during;
+        }
       }
     });
   })();

@@ -10,7 +10,7 @@
     "start": "gulp watch",
     "bem": "gulp bem"
   },
-  "author": "instagram: @html.mentor",
+  "author": "Anvar Ahmadjanov",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.16.0",
