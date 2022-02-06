@@ -1,0 +1,63 @@
+.p-name.active {
+  padding-top: 146px !important;
+}
+
+.p-name form {
+  height: calc(100vh - 186px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.p-name .title {
+  display: inline-block;
+  margin-bottom: 32px;
+}
+
+.p-name .input {
+  margin-bottom: 16px;
+}
+
+.p-name p {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.2;
+  color: #8C7063;
+  letter-spacing: 1px;
+  margin-bottom: 32px;
+}
+
+.p-name .alert-btn {
+  width: 100%;
+  margin-top: auto;
+}
+
+.p-name-result.active {
+  padding-top: 104px !important;
+}
+
+.p-name-result {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.p-name-result .title {
+  margin-bottom: 24px;
+}
+
+.p-name-result__username {
+  color: #E23C08;
+}
+/*# sourceMappingURL=name.css.map */

@@ -1,0 +1,80 @@
+.p-year {
+  &.active {
+    padding-top: 138px !important;
+  }
+
+  .title {
+    margin-bottom: 33px;
+  }
+}
+
+.year-btns {
+  display: grid;
+  row-gap: 16px;
+  margin-bottom: 24px;
+}
+
+.year-btn {
+  display: flex;
+  align-items: center;
+  column-gap: 16px;
+  width: 100%;
+  padding: 8px 16px;
+  border-width: 0;
+  border-radius: 16px;
+  opacity: 0.8;
+  backdrop-filter: blur(8px);
+  filter: drop-shadow(0px 4px 16px rgba(101, 34, 13, 0.24));
+  background-color: #FFFFFF;
+  transition: all 0.3s;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 1.2;
+  color: #3F170D;
+
+
+  &:hover {
+    background-color: #E23C08;
+    color: #FFFFFF;
+
+    .chevron-icon path {
+      stroke: #fff;
+    }
+  }
+}
+
+.man-icon {
+  margin-bottom: -8px;
+}
+
+.chevron-icon {
+  margin-left: auto;
+
+  path {
+    transition: all 0.3s;
+  }
+}
+
+.year-hint {
+  background-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0px 4px 16px rgba(101, 34, 13, 0.24);
+  backdrop-filter: blur(8px);
+  border-radius: 24px;
+  padding: 16px;
+  font-size: 14px;
+  line-height: 1.2;
+  color: #8C7063;
+
+  h3 {
+    margin-bottom: 8px;
+    font-weight: bold;
+  }
+
+  p {
+    font-weight: 500;
+  }
+
+  span {
+    font-weight: 700;
+  }
+}
