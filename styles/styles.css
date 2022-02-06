@@ -2,6 +2,7 @@
    v2.0 | 20110126
    License: none (public domain)
 */
+@import url("../assets/fonts/montserrat/stylesheet.css");
 html,
 body,
 div,
@@ -133,6 +134,14 @@ table {
   border-spacing: 0;
 }
 
+input,
+textarea,
+button,
+select,
+a {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
 body {
   height: 100vh;
   min-height: 800px;
@@ -144,6 +153,7 @@ body {
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
 }
 
 main,
@@ -153,6 +163,21 @@ section {
 
 section {
   position: relative;
+  opacity: 0;
+  visibility: hidden;
+  height: 0;
+  overflow: hidden;
+}
+
+section.active {
+  overflow: visible;
+  height: 100%;
+  opacity: 1;
+  visibility: visible;
+}
+
+section.active.p--padding {
+  padding: 0 32px 40px 32px;
 }
 
 .sr-only {
@@ -193,8 +218,8 @@ section {
   visibility: hidden;
   width: 268px;
   position: relative;
-  -webkit-transition: opacity 0.5s;
-  transition: opacity 0.5s;
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
   height: 0;
 }
 
@@ -253,8 +278,8 @@ section {
   padding: 0;
   border-width: 0;
   background-color: #E23C08;
-  -webkit-transition: all 0.5s;
-  transition: all 0.5s;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
 }
 
 .p-welcome__control.active {
@@ -272,8 +297,8 @@ section {
   row-gap: 24px;
   opacity: 0;
   visibility: hidden;
-  -webkit-transition: opacity 0.5s;
-  transition: opacity 0.5s;
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
   height: 0;
 }
 
@@ -291,9 +316,17 @@ img {
   max-width: 100%;
 }
 
+.p__bg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
 .title {
   font-style: normal;
-  font-weight: bold;
+  font-weight: 700;
   font-size: 26px;
   line-height: 1.23;
   color: #3F170D;
@@ -320,11 +353,241 @@ img {
           filter: drop-shadow(0px 4px 16px rgba(101, 34, 13, 0.24));
 }
 
-.p__bg {
+.input {
+  border-width: 0;
+  border-radius: 16px;
+  padding: 20px 24px;
+  opacity: 0.8;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.05;
+  -webkit-backdrop-filter: blur(8px);
+          backdrop-filter: blur(8px);
+  background: #FFFFFF;
+}
+
+.input::-webkit-input-placeholder {
+  color: #E1D2CE;
+}
+
+.input:-ms-input-placeholder {
+  color: #E1D2CE;
+}
+
+.input::-ms-input-placeholder {
+  color: #E1D2CE;
+}
+
+.input::placeholder {
+  color: #E1D2CE;
+}
+
+.progress {
   position: absolute;
+  z-index: 1;
   left: 0;
-  top: 0;
+  top: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 16px;
   width: 100%;
-  height: 100%;
+  padding: 0 32px;
+  opacity: 0;
+  visibility: hidden;
+  height: 0;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.25;
+  color: #3F170D;
+}
+
+.progress.active {
+  opacity: 1;
+  visibility: visible;
+  height: auto;
+}
+
+.progress-text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.progress-bar {
+  background-color: #FFFFFF;
+  border-radius: 20px;
+}
+
+.progress-bar__line {
+  height: 6px;
+  background: #3F170D;
+  border-radius: 20px;
+  width: 8.3%;
+  -webkit-transition: width 0.3s;
+  transition: width 0.3s;
+}
+
+.p-name.active {
+  padding-top: 146px !important;
+}
+
+.p-name form {
+  height: calc(100vh - 186px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.p-name .title {
+  display: inline-block;
+  margin-bottom: 32px;
+}
+
+.p-name .input {
+  margin-bottom: 16px;
+}
+
+.p-name p {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.2;
+  color: #8C7063;
+  letter-spacing: 1px;
+  margin-bottom: 32px;
+}
+
+.p-name .alert-btn {
+  width: 100%;
+  margin-top: auto;
+}
+
+.p-name-result.active {
+  padding-top: 104px !important;
+}
+
+.p-name-result {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.p-name-result .title {
+  margin-bottom: 24px;
+}
+
+.p-name-result__username {
+  color: #E23C08;
+}
+
+.p-year.active {
+  padding-top: 138px !important;
+}
+
+.p-year .title {
+  margin-bottom: 33px;
+}
+
+.year-btns {
+  display: -ms-grid;
+  display: grid;
+  row-gap: 16px;
+  margin-bottom: 24px;
+}
+
+.year-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-column-gap: 16px;
+          column-gap: 16px;
+  width: 100%;
+  padding: 8px 16px;
+  border-width: 0;
+  border-radius: 16px;
+  opacity: 0.8;
+  -webkit-backdrop-filter: blur(8px);
+          backdrop-filter: blur(8px);
+  -webkit-filter: drop-shadow(0px 4px 16px rgba(101, 34, 13, 0.24));
+          filter: drop-shadow(0px 4px 16px rgba(101, 34, 13, 0.24));
+  background-color: #FFFFFF;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 1.2;
+  color: #3F170D;
+}
+
+.year-btn:hover {
+  background-color: #E23C08;
+  color: #FFFFFF;
+}
+
+.year-btn:hover .chevron-icon path {
+  stroke: #fff;
+}
+
+.man-icon {
+  margin-bottom: -8px;
+}
+
+.chevron-icon {
+  margin-left: auto;
+}
+
+.chevron-icon path {
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.year-hint {
+  background-color: rgba(255, 255, 255, 0.4);
+  -webkit-box-shadow: 0px 4px 16px rgba(101, 34, 13, 0.24);
+          box-shadow: 0px 4px 16px rgba(101, 34, 13, 0.24);
+  -webkit-backdrop-filter: blur(8px);
+          backdrop-filter: blur(8px);
+  border-radius: 24px;
+  padding: 16px;
+  font-size: 14px;
+  line-height: 1.2;
+  color: #8C7063;
+}
+
+.year-hint h3 {
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.year-hint p {
+  font-weight: 500;
+}
+
+.year-hint span {
+  font-weight: 700;
 }
 /*# sourceMappingURL=styles.css.map */
