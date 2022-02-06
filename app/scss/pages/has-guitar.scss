@@ -1,0 +1,44 @@
+.p-has-guitar {
+
+  .year-btn {
+    padding: 18px 16px;
+
+    &:hover {
+      .icon-wrapper {
+        color: #3F170D;
+      }
+    }
+  }
+}
+
+.icon-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  background-color: #FFD284;
+  color: #E23C08;
+
+  svg {
+    transition: all 0.3s;
+  }
+}
+
+.year-hint--gap {
+  display: grid;
+  row-gap: 16px;
+}
+
+.p-has-guitar__answer {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.22;
+  text-align: left;
+}
+
+.smile-icon {
+  min-width: 44px;
+}
