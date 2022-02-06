@@ -1,0 +1,25 @@
+.p-thought {
+  display: flex;
+  flex-direction: column;
+
+  .lg-width {
+    max-width: 194px;
+  }
+
+  .xl-width {
+    max-width: 216px;
+  }
+
+  .md-width {
+    max-width: 170px;
+  }
+
+  .inspirations {
+    margin-bottom: 38px;
+  }
+
+  .alert-btn {
+    margin-top: auto;
+    width: 100%;
+  }
+}

@@ -9,6 +9,12 @@
       }
     }
   }
+
+  article:last-child {
+    p:first-child {
+      margin-bottom: 4px;
+    }
+  }
 }
 
 .icon-wrapper {

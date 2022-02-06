@@ -6,7 +6,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>One-String Ninja</title>
-	<link rel="stylesheet" href="./css/main.css?t=1644164774461">
+	<link rel="stylesheet" href="./css/main.css?t=1644177378304">
 </head>
 
 <body>
@@ -193,7 +193,7 @@
 			</button>
 		</li>
 		<li>
-			<button class="year-btn" data-next-btn="4" data-has-guitar="no" type="button">
+			<button class="year-btn" data-next-btn="4" data-hasguitar="no" type="button">
 				<span class="icon-wrapper" data-hasguitar="no">
 					<svg width="22" height="22" viewBox="0 0 22 22" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
 						<path
@@ -324,56 +324,115 @@
 	</article>
 </section>
 
-		<!-- ! Eight page -->
-<section class="p-year p-has-guitar p--padding" data-page="7">
-	<h2 class="title" for="name">Были ли у тебя такие мысли по поводу гитары?</h2>
-	<ul class="year-btns" id="during-btns">
-		<li>
-			<button class="year-btn" data-next-btn="7" data-during="1-a-week" type="button">
-				<img src="./img/calendar.svg" alt="">
-				<span class="p-has-guitar__answer">Раз в неделю</span>
-				<svg class="chevron-icon" width="16" height="16" viewBox="0 0 16 16" fill="none"
-					xmlns="http://www.w3.org/2000/svg">
-					<path d="M5.14285 2.85715L10.2857 8L5.14285 13.1429" stroke="#3F170D" stroke-width="1.8"
-						stroke-linecap="round" stroke-linejoin="round" />
-				</svg>
-			</button>
-		</li>
-		<li>
-			<button class="year-btn" data-next-btn="7" data-during="several-a-week" type="button">
-				<span class="icon-wrapper">
-					<img src="./img/calendar.svg" alt="">
-				</span>
-				<span class="p-has-guitar__answer">Несколько раз в неделю</span>
-				<svg class="chevron-icon" width="16" height="16" viewBox="0 0 16 16" fill="none"
-					xmlns="http://www.w3.org/2000/svg">
-					<path d="M5.14285 2.85715L10.2857 8L5.14285 13.1429" stroke="#3F170D" stroke-width="1.8"
-						stroke-linecap="round" stroke-linejoin="round" />
-				</svg>
-			</button>
-		</li>
-		<li>
-			<button class="year-btn" data-next-btn="7" data-during="every-day" type="button">
-				<span class="icon-wrapper">
-					<img src="./img/calendar.svg" alt="">
-				</span>
-				<span class="p-has-guitar__answer">Каждый день</span>
-				<svg class="chevron-icon" width="16" height="16" viewBox="0 0 16 16" fill="none"
-					xmlns="http://www.w3.org/2000/svg">
-					<path d="M5.14285 2.85715L10.2857 8L5.14285 13.1429" stroke="#3F170D" stroke-width="1.8"
-						stroke-linecap="round" stroke-linejoin="round" />
-				</svg>
-			</button>
-		</li>
+		<!-- ! Eighth page -->
+<section class="p-year p-thought p--padding" data-page="7">
+	<h2 class="title" for="name">Были ли у тебя такие мысли <br> по поводу гитары?</h2>
+	<div class="inspirations" id="during-btns">
+		<article class="lg-width">Учиться играть слишком сложно</article>
+		<div class="inspirations-items-wrapper">
+			<article class="active">Будут смеяться и критиковать</article>
+			<article>Учиться скучно</article>
+		</div>
+		<article class="active xl-width">Обучение занимает целую вечность</article>
+		<article class="lg-width">Страшно, что не будет получаться</article>
+		<article class="active md-width">Гитара вообще не мое</article>
+	</div>
+	<button class="alert-btn" data-next-btn="7" type="button">Дальше</button>
+</section>
+
+		<!-- ! Ninth page -->
+<section class="p-inspirations p--padding" data-page="8">
+	<h2 class="title" for="name">Что вдохновляет тебя играть на гитаре:</h2>
+	<div class="inspirations" id="during-btns">
+		<article class="active md-width">Сыграть крутую песню в любое время</article>
+		<div class="inspirations-items-wrapper">
+			<article>Играть вместе с другими</article>
+			<article class="active min-size">Очаровать девушку</article>
+		</div>
+		<article class="sm-width">Поднимать себе настроение</article>
+		<div class="inspirations-items-wrapper">
+			<article class="active">Сочинять свою музыку</article>
+			<article>Впечатлить друзей</article>
+		</div>
+		<article class="lg-width">Медитировать и снимать стресс</article>
+	</div>
+	<button class="alert-btn" data-next-btn="8" type="button">Дальше</button>
+</section>
+
+		<!-- ! Tenth page -->
+<section class="p-year p-thought p--padding" data-page="9">
+	<h2 class="title">Отметь термины с которыми ты уже знаком?</h2>
+	<form class="terms-form" id="terms-form">
+		<div class="terms">
+			<label>
+				<input value="accords" type="checkbox">
+				<span>Аккорды</span>
+				<img src="./img/musical/accords.svg" alt="">
+			</label>
+			<label>
+				<input value="strumming" type="checkbox">
+				<span>Бой</span>
+				<img src="./img/musical/guitar.svg" alt="">
+			</label>
+			<label>
+				<input value="barre" type="checkbox">
+				<span>Баре</span>
+				<img src="./img/musical/guitar-head.svg" alt="">
+			</label>
+			<label>
+				<input value="fingering" type="checkbox">
+				<span>Перебор</span>
+				<img src="./img/musical/guitarist.svg" alt="">
+			</label>
+			<label>
+				<input value="tablature" type="checkbox">
+				<span>Табулатура</span>
+				<img src="./img/musical/music-book.svg" alt="">
+			</label>
+			<label>
+				<input value="slides" type="checkbox">
+				<span>Слайды</span>
+				<img src="./img/musical/picks.svg" alt="">
+			</label>
+		</div>
+		<button class="alert-btn" data-next-btn="9">Дальше</button>
+	</form>
+</section>
+
+		<!-- ! Eleventh page -->
+<section class="p-year p-fact p--padding" data-page="10">
+	<h2 class="title">Научный факт:</h2>
+	<ul class="fact">
+		<li>Музыка — это природный наркотик.</li>
+		<li>Прослушивание любимого музыкального произведения поднимает настроение.</li>
+		<li>Человек, умеющий играть на музыкальном инструменте, направляет свои эмоции в конструктивное русло и сохраняет
+			здоровье.</li>
 	</ul>
-	<article class="year-hint">
-		<h3>Боязнь ошибок и недостаток удовольствия</h3>
-		<p>Думайте об упражнениях и уроках скорее как об удовольствии.</p>
-		<p>Не нужно думать об ошибках, сохраняйте концентрацию.</p>
-	</article>
+	<button class="alert-btn" data-next-btn="10">Дальше</button>
+</section>
+
+		<!-- ! Twelve page -->
+<section class="p-name p--padding" data-page="11">
+	<form id="email-form">
+		<div id="test"></div>
+		<label class="title" for="email">Введи свой Email и получи Доступ к 100+ Видеоурокам</label>
+		<input class="input" type="email" name="email" id="email" placeholder="Email">
+		<button data-next-btn="11" class="alert-btn">Дальше</button>
+	</form>
+</section>
+
+		<!-- ! Thirteenth page -->
+<section class="p-year p-thanks p--padding" data-page="12">
+	<h2 class="title">Спасибо!</h2>
+	<p class="mb--8">Ваш первый видеоурок готов к просмотру!</p>
+	<p>Научись Играть Самые Узнаваемые Мелодии из 100+ Всемирно Известных Песен.</p>
+	<div class="thanks__img">
+		<img src="./img/finish.svg" alt="">
+	</div>
+	<button class="alert-btn">Начать!</button>
 </section>
 	</main>
-	<script src="./js/main.js?t=1644164774461"></script>
+	<script src="./js/main.js?t=1644177378304"></script>
 </body>
 
 </html>
