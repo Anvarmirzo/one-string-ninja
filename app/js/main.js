@@ -7,9 +7,11 @@ document.addEventListener("DOMContentLoaded", function (e) {
   // Сollection of user information
   const formData = {
     name: "",
+    email: "",
     year: "",
     hasGuitar: "",
     during: "",
+    terms: {},
   };
 
   // Set pages length
@@ -25,6 +27,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
   (() => {
     const observer = new MutationObserver(function (mutations) {
       mutations.forEach(function (mutation) {
+        console.log(formData);
         if (mutation.type === "attributes") {
           // Change current page
           const previousPage = document.querySelector(
@@ -121,6 +124,18 @@ document.addEventListener("DOMContentLoaded", function (e) {
     });
   })();
 
+  // Email form
+  (() => {
+    const emailForm = document.getElementById("email-form");
+    emailForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+      // Save user email
+      const printName = document.getElementById("username");
+      formData.email = emailForm.querySelector("input").value;
+      printName.textContent = formData.name;
+    });
+  })();
+
   // Age form
   (() => {
     const ageForm = document.getElementById("year-btns");
@@ -131,6 +146,10 @@ document.addEventListener("DOMContentLoaded", function (e) {
       if (event.target.closest("button")) {
         if (!event.target.dataset.year) {
           formData.year = event.target.parentElement.dataset.year;
+          if (!formData.year) {
+            formData.year =
+              event.target.parentElement.parentElement.dataset.year;
+          }
         } else {
           formData.year = event.target.dataset.year;
         }
@@ -143,7 +162,8 @@ document.addEventListener("DOMContentLoaded", function (e) {
     const hasGuitarForm = document.getElementById("has-guitar-btns");
     hasGuitarForm.addEventListener("click", (event) => {
       if (event.target.closest("[data-next-btn]")) {
-        if (!event.target.dataset.hasGuitar) {
+        console.log(event.target);
+        if (!event.target.dataset.hasguitar) {
           formData.hasGuitar = event.target.parentElement.dataset.hasguitar;
           if (!formData.hasGuitar) {
             formData.hasGuitar =
@@ -161,7 +181,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
     const duringForm = document.getElementById("during-btns");
     duringForm.addEventListener("click", (event) => {
       if (event.target.closest("[data-next-btn]")) {
-        if (!event.target.dataset.hasGuitar) {
+        if (!event.target.dataset.during) {
           formData.during = event.target.parentElement.dataset.during;
           if (!formData.during) {
             formData.during =
@@ -169,6 +189,22 @@ document.addEventListener("DOMContentLoaded", function (e) {
           }
         } else {
           formData.during = event.target.dataset.during;
+        }
+      }
+    });
+  })();
+
+  // Terms form
+  (() => {
+    const form = document.getElementById("terms-form");
+    form.addEventListener("submit", function (event) {
+      event.preventDefault();
+      const checkboxes = form.querySelectorAll("[type=checkbox]");
+      for (const item of checkboxes) {
+        if (item.checked) {
+          formData.terms[item.value] = true;
+        } else {
+          formData.terms[item.value] = false;
         }
       }
     });

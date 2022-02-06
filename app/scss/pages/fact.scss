@@ -1,0 +1,68 @@
+.p-fact {
+  display: flex;
+  flex-direction: column;
+
+  .alert-btn {
+    width: 100%;
+    margin-top: auto;
+  }
+}
+
+.fact {
+  display: flex;
+  flex-direction: column;
+  row-gap: 24px;
+  padding: 24px 16px 24px 56px;
+  margin-bottom: 30px;
+  border-radius: 24px;
+  backdrop-filter: blur(8px);
+  box-shadow: 0px 4px 16px rgba(101, 34, 13, 0.24);
+  background: rgba($color: #fff, $alpha: 0.4);
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.22;
+  color: #3F170D;
+
+  li {
+    position: relative;
+
+    &:first-child::before {
+      position: absolute;
+      top: 0;
+      left: -40px;
+      content: "";
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+      background-image: url("../img/musical/accords.svg");
+      background-position: center;
+      background-size: contain;
+    }
+
+    &:nth-child(2)::before {
+      position: absolute;
+      top: 0;
+      left: -40px;
+      content: "";
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+      background-image: url("../img/musical/guitar.svg");
+      background-position: center;
+      background-size: contain;
+    }
+
+    &:last-child::before {
+      position: absolute;
+      top: 0;
+      left: -40px;
+      content: "";
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+      background-image: url("../img/musical/guitarist.svg");
+      background-position: center;
+      background-size: contain;
+    }
+  }
+}

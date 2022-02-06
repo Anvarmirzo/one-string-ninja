@@ -1,0 +1,24 @@
+.p-thanks {
+  display: flex;
+  flex-direction: column;
+
+  p {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1.22;
+    color: #3F170D;
+  }
+
+  .alert-btn {
+    width: 100%;
+    margin-top: auto;
+  }
+}
+
+.mb--8 {
+  margin-bottom: 8px;
+}
+
+.thanks__img {
+  margin: 40px auto 42px;
+}
