@@ -15,6 +15,17 @@
       margin-bottom: 4px;
     }
   }
+
+  &.active {
+    .year-hint--gap {
+      transform: translateY(0);
+    }
+  }
+}
+
+.p-has-guitar--flex {
+  display: flex;
+  flex-direction: column;
 }
 
 .icon-wrapper {
@@ -36,6 +47,11 @@
 .year-hint--gap {
   display: grid;
   row-gap: 16px;
+  transition: all 0.5s;
+}
+
+.p-has-guitar-hint {
+  transform: translateY(50%);
 }
 
 .p-has-guitar__answer {

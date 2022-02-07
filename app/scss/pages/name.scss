@@ -1,4 +1,6 @@
 .p-name {
+  transition: opacity $page_transition;
+
   &.active {
     padding-top: 146px !important;
   }
@@ -34,6 +36,8 @@
 }
 
 .p-name-result {
+  transition: opacity $page_transition;
+
   &.active {
     padding-top: 104px !important;
   }

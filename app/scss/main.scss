@@ -33,7 +33,6 @@ section {
   visibility: hidden;
   height: 0;
   overflow: hidden;
-  transition: opacity $page_transition;
 
   &.active {
     overflow: visible;
