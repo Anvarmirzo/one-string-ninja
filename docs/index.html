@@ -6,7 +6,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>One-String Ninja</title>
-	<link rel="stylesheet" href="./css/main.css?t=1644177378304">
+	<link rel="stylesheet" href="./css/main.css?t=1644262928043">
 </head>
 
 <body>
@@ -51,23 +51,17 @@
 			</article>
 		</div>
 		<nav id="welcome-slider__contorls" class="p-welcome-nav">
-			<ul class="p-welcome-menu">
-				<li>
-					<button class="p-welcome__control active" data-control="0" type="button">
-						<span class="sr-only">1-slide</span>
-					</button>
-				</li>
-				<li>
-					<button class="p-welcome__control" data-control="1" type="button">
-						<span class="sr-only">2-slide</span>
-					</button>
-				</li>
-				<li>
-					<button class="p-welcome__control" data-control="2" type="button">
-						<span class="sr-only">3-slide</span>
-					</button>
-				</li>
-			</ul>
+			<div class="p-welcome-menu">
+				<button class="p-welcome__control active" data-control="0" type="button">
+					<span class="sr-only">1-slide</span>
+				</button>
+				<button class="p-welcome__control" data-control="1" type="button">
+					<span class="sr-only">2-slide</span>
+				</button>
+				<button class="p-welcome__control" data-control="2" type="button">
+					<span class="sr-only">3-slide</span>
+				</button>
+			</div>
 			<button class="alert-btn" id="next-btn" type="button">Вперед!</button>
 		</nav>
 	</div>
@@ -173,7 +167,7 @@
 </section>
 
 		<!-- ! Fifth page -->
-<section class="p-year p-has-guitar p--padding" data-page="4">
+<section class="p-year p-has-guitar p--padding p-has-guitar--flex" data-page="4">
 	<h2 class="title" for="name">У тебя есть гитара?</h2>
 	<ul class="year-btns" id="has-guitar-btns">
 		<li>
@@ -210,7 +204,7 @@
 		</li>
 	</ul>
 
-	<div class="year-hint year-hint--gap">
+	<div class="year-hint year-hint--gap p-has-guitar-hint">
 		<article>
 			<h3>Нереалистичные цели:</h3>
 			<p>Лучше ставить цели, которых легко достичь. Лучше всего учиться играть простые и узнаваемые песни.</p>
@@ -328,14 +322,32 @@
 <section class="p-year p-thought p--padding" data-page="7">
 	<h2 class="title" for="name">Были ли у тебя такие мысли <br> по поводу гитары?</h2>
 	<div class="inspirations" id="during-btns">
-		<article class="lg-width">Учиться играть слишком сложно</article>
+		<label class="lg-width">
+			<input value="hard-learn" type="checkbox">
+			<span>Учиться играть слишком сложно</span>
+		</label>
 		<div class="inspirations-items-wrapper">
-			<article class="active">Будут смеяться и критиковать</article>
-			<article>Учиться скучно</article>
+			<label>
+				<input value="bulling" type="checkbox" checked>
+				<span>Будут смеяться и критиковать</span>
+			</label>
+			<label>
+				<input value="boring" type="checkbox">
+				<span>Учиться скучно</span>
+			</label>
 		</div>
-		<article class="active xl-width">Обучение занимает целую вечность</article>
-		<article class="lg-width">Страшно, что не будет получаться</article>
-		<article class="active md-width">Гитара вообще не мое</article>
+		<label class="xl-width">
+			<input value="long-learning" type="checkbox" checked>
+			<span>Обучение занимает целую вечность</span>
+		</label>
+		<label class="lg-width">
+			<input value="failure" type="checkbox">
+			<span>Страшно, что не будет получаться</span>
+		</label>
+		<label class="md-width">
+			<input value="not-mine" type="checkbox" checked>
+			<span>Гитара вообще не мое</span>
+		</label>
 	</div>
 	<button class="alert-btn" data-next-btn="7" type="button">Дальше</button>
 </section>
@@ -344,17 +356,38 @@
 <section class="p-inspirations p--padding" data-page="8">
 	<h2 class="title" for="name">Что вдохновляет тебя играть на гитаре:</h2>
 	<div class="inspirations" id="during-btns">
-		<article class="active md-width">Сыграть крутую песню в любое время</article>
+		<label class="md-width">
+			<input value="play-anytime" type="checkbox" checked>
+			<span>Сыграть крутую песню в любое время</span>
+		</label>
 		<div class="inspirations-items-wrapper">
-			<article>Играть вместе с другими</article>
-			<article class="active min-size">Очаровать девушку</article>
+			<label>
+				<input value="play-together" type="checkbox">
+				<span>Играть вместе с другими</span>
+			</label>
+			<label class="min-size">
+				<input value="play-for-girl" type="checkbox" checked>
+				<span>Очаровать девушку</span>
+			</label>
 		</div>
-		<article class="sm-width">Поднимать себе настроение</article>
+		<label class="sm-width">
+			<input value="mood" type="checkbox">
+			<span>Поднимать себе настроение</span>
+		</label>
 		<div class="inspirations-items-wrapper">
-			<article class="active">Сочинять свою музыку</article>
-			<article>Впечатлить друзей</article>
+			<label class="sm-width">
+				<input value="create-own" type="checkbox" checked>
+				<span>Сочинять свою музыку</span>
+			</label>
+			<label class="sm-width">
+				<input value="impression" type="checkbox">
+				<span>Впечатлить друзей</span>
+			</label>
 		</div>
-		<article class="lg-width">Медитировать и снимать стресс</article>
+		<label class="lg-width">
+			<input value="meditate" type="checkbox">
+			<span>Медитировать и снимать стресс</span>
+		</label>
 	</div>
 	<button class="alert-btn" data-next-btn="8" type="button">Дальше</button>
 </section>
@@ -432,7 +465,7 @@
 	<button class="alert-btn">Начать!</button>
 </section>
 	</main>
-	<script src="./js/main.js?t=1644177378304"></script>
+	<script src="./js/main.js?t=1644262928043"></script>
 </body>
 
 </html>

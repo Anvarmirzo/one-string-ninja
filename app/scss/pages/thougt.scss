@@ -1,4 +1,5 @@
 .p-thought {
+  transition: opacity $page_transition;
   display: flex;
   flex-direction: column;
 

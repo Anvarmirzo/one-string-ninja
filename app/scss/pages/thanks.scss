@@ -1,6 +1,7 @@
 .p-thanks {
   display: flex;
   flex-direction: column;
+  transition: opacity $page_transition;
 
   p {
     font-weight: 500;

@@ -13,7 +13,7 @@
   visibility: hidden;
   width: 268px;
   position: relative;
-  transition: opacity 0.3s;
+  transition: opacity $welcome_transition;
   height: 0;
 
   &.active {
@@ -48,12 +48,13 @@
 }
 
 .p-welcome-menu {
-  display: flex;
-  align-items: center;
-  column-gap: 10px;
+  position: relative;
+  width: 64px;
+  height: 6px;
 }
 
 .p-welcome__control {
+  position: absolute;
   display: block;
   width: 6px;
   height: 6px;
@@ -63,8 +64,17 @@
   background-color: #E23C08;
   transition: all 0.3s;
 
-  &.active {
+  &:first-child {
     width: 32px;
+    left: 0;
+  }
+
+  &:nth-child(2) {
+    left: 42px;
+  }
+
+  &:last-child {
+    left: 58px;
   }
 }
 
@@ -74,7 +84,7 @@
   row-gap: 24px;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.3s;
+  transition: opacity $welcome_transition;
   height: 0;
 
   &.active {
