@@ -107,6 +107,26 @@ document.addEventListener("DOMContentLoaded", function (e) {
       allBullets[currentSlide].classList.add("active");
       imageSlides[currentSlide].classList.add("active");
       textSlides[currentSlide].classList.add("active");
+
+      switch (currentSlide) {
+        case 0:
+          break;
+
+        case 1:
+          allBullets[0].style.left = "17px";
+          allBullets[1].style.left = "58px";
+          allBullets[2].style.left = "0";
+
+          break;
+
+        case 2:
+          allBullets[0].style.left = "32px";
+          allBullets[1].style.left = "16px";
+          break;
+
+        default:
+          break;
+      }
     };
 
     bulletsWrapper.addEventListener("click", handleClick);
