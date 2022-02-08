@@ -229,4 +229,36 @@ document.addEventListener("DOMContentLoaded", function (e) {
       }
     });
   })();
+
+  // Change checkboxes content
+  (() => {
+    const checkboxesPage = document.getElementById("checkboxes"),
+      checkboxes = checkboxesPage.querySelectorAll("#during-btns span"),
+      titles = checkboxesPage.querySelectorAll(".title"),
+      btn = document.getElementById("change-checkboxes");
+
+    btn.addEventListener("click", (e) => {
+      if (!checkboxes.length || titles.length < 2) return;
+
+      checkboxesPage.classList.add("second-part");
+      titles[0].classList.remove("active");
+      titles[1].classList.add("active");
+
+      checkboxes[0].textContent = "Сыграть крутую песню в любое время";
+      checkboxes[1].textContent = "Очаровать девушку";
+      checkboxes[1].parentElement.classList.add("swapped");
+      checkboxes[2].innerHTML = "Играть&nbsp;вместе с другими";
+      checkboxes[2].parentElement.classList.add("swapped");
+      checkboxes[3].textContent = "Поднимать себе настроение";
+      checkboxes[4].innerHTML = "Сочинять свою&nbsp;музыку";
+      checkboxes[5].parentElement.classList.add("create");
+      checkboxes[6].textContent = "Медитировать и снимать стресс";
+
+      for (const span of checkboxes) {
+        span.previousElementSibling.checked = false;
+      }
+
+      btn.setAttribute("data-next-btn", "8");
+    });
+  })();
 });

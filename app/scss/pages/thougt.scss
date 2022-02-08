@@ -3,16 +3,74 @@
   display: flex;
   flex-direction: column;
 
-  .lg-width {
+  label {
+    transition: opacity $thought_transition, max-width $thought_transition, background-color $thought_transition;
+  }
+
+  .title {
+    height: 0;
+    font-size: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s;
+    margin-bottom: 0;
+
+    &.active {
+      height: auto;
+      font-size: 26px;
+      opacity: 1;
+      visibility: visible;
+      margin-bottom: 32px;
+    }
+  }
+
+  .first {
     max-width: 194px;
   }
 
-  .xl-width {
+  .second {
+    max-width: 170px;
+    transition: max-width 0s, transform $thought_transition;
+
+    &.swapped {
+      transform: translateX(132%);
+    }
+  }
+
+  .third {
+    max-width: 102px;
+    transition: max-width 0s, transform $thought_transition;
+
+    &.swapped {
+      transform: translateX(-94%);
+    }
+  }
+
+  .fourth {
     max-width: 216px;
   }
 
-  .md-width {
+  .fifth {
+    max-width: 196px;
+  }
+
+  .sixth {
     max-width: 170px;
+  }
+
+  .seventh {
+    &.created {
+      max-width: 190px;
+      opacity: 0;
+      visibility: hidden;
+      height: 0;
+
+      &.create {
+        opacity: 1;
+        visibility: visible;
+        height: auto;
+      }
+    }
   }
 
   .inspirations {
@@ -22,5 +80,35 @@
   .alert-btn {
     margin-top: auto;
     width: 100%;
+  }
+
+  &.second-part {
+    .first {
+      max-width: 244px;
+    }
+
+    .second {
+      max-width: 126px;
+    }
+
+    .third {
+      max-width: 164px;
+    }
+
+    .fourth {
+      max-width: 182px;
+    }
+
+    .fifth {
+      max-width: 148px;
+    }
+
+    .sixth {
+      max-width: 190px;
+    }
+
+    .seventh {
+      max-width: 136px;
+    }
   }
 }

@@ -6,7 +6,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>One-String Ninja</title>
-	<link rel="stylesheet" href="./css/main.css?t=1644262928043">
+	<link rel="stylesheet" href="./css/main.css?t=1644347995443">
 </head>
 
 <body>
@@ -81,7 +81,7 @@
 		<!-- ! Third page -->
 <section class="p-name-result p--padding" data-page="2">
 	<div class="p-name-result-top">
-		<h2 class="title" for="name">
+		<h2 class="title">
 			<span class="p-name-result__username" id="username"></span>, ты в правильном месте!
 		</h2>
 		<p class="subtitle">Скоро ты почувствуешь себя намного увереннее с гитарой и сможешь сыграть много известных
@@ -96,7 +96,7 @@
 
 		<!-- ! Fourth page -->
 <section class="p-year p--padding" data-page="3">
-	<h2 class="title" for="name">Сколько тебе лет?</h2>
+	<h2 class="title">Сколько тебе лет?</h2>
 	<ul class="year-btns" id="year-btns">
 		<li>
 			<button class="year-btn" data-next-btn="3" data-year="6-17" type="button">
@@ -168,7 +168,7 @@
 
 		<!-- ! Fifth page -->
 <section class="p-year p-has-guitar p--padding p-has-guitar--flex" data-page="4">
-	<h2 class="title" for="name">У тебя есть гитара?</h2>
+	<h2 class="title">У тебя есть гитара?</h2>
 	<ul class="year-btns" id="has-guitar-btns">
 		<li>
 			<button class="year-btn" data-next-btn="4" data-hasguitar="yes" type="button">
@@ -218,7 +218,7 @@
 
 		<!-- ! Sixth page -->
 <section class="p-year p-has-guitar p--padding" data-page="5">
-	<h2 class="title" for="name">Играешь на гитаре?</h2>
+	<h2 class="title">Играешь на гитаре?</h2>
 	<ul class="year-btns" id="year-btns">
 		<li>
 			<button class="year-btn" data-next-btn="5" data-play="noob" type="button">
@@ -270,7 +270,7 @@
 
 		<!-- ! Seventh page -->
 <section class="p-year p-has-guitar p--padding" data-page="6">
-	<h2 class="title" for="name">Насколько часто хотелось бы играть?</h2>
+	<h2 class="title">Насколько часто хотелось бы играть?</h2>
 	<ul class="year-btns" id="during-btns">
 		<li>
 			<button class="year-btn" data-next-btn="6" data-during="1-a-week" type="button">
@@ -319,45 +319,52 @@
 </section>
 
 		<!-- ! Eighth page -->
-<section class="p-year p-thought p--padding" data-page="7">
-	<h2 class="title" for="name">Были ли у тебя такие мысли <br> по поводу гитары?</h2>
+<section class="p-year p-thought p--padding" data-page="7" id="checkboxes">
+	<h2 class="title active">Были ли у тебя такие мысли <br> по поводу гитары?</h2>
+	<h2 class="title">Что&nbsp;вдохновляет&nbsp;тебя играть на гитаре:</h2>
 	<div class="inspirations" id="during-btns">
-		<label class="lg-width">
+		<label class="first">
 			<input value="hard-learn" type="checkbox">
 			<span>Учиться играть слишком сложно</span>
 		</label>
 		<div class="inspirations-items-wrapper">
-			<label>
-				<input value="bulling" type="checkbox" checked>
+			<label class="second">
+				<input value="bulling" type="checkbox">
 				<span>Будут смеяться и критиковать</span>
 			</label>
-			<label>
+			<label class="third">
 				<input value="boring" type="checkbox">
 				<span>Учиться скучно</span>
 			</label>
 		</div>
-		<label class="xl-width">
-			<input value="long-learning" type="checkbox" checked>
+		<label class="fourth">
+			<input value="long-learning" type="checkbox">
 			<span>Обучение занимает целую вечность</span>
 		</label>
-		<label class="lg-width">
-			<input value="failure" type="checkbox">
-			<span>Страшно, что не будет получаться</span>
-		</label>
-		<label class="md-width">
-			<input value="not-mine" type="checkbox" checked>
+		<div class="inspirations-items-wrapper">
+			<label class="fifth">
+				<input value="failure" type="checkbox">
+				<span>Страшно, что не будет получаться</span>
+			</label>
+			<label class="seventh created">
+				<input value="meditate" type="checkbox">
+				<span>Впечатлить друзей</span>
+			</label>
+		</div>
+		<label class="sixth">
+			<input value="not-mine" type="checkbox">
 			<span>Гитара вообще не мое</span>
 		</label>
 	</div>
-	<button class="alert-btn" data-next-btn="7" type="button">Дальше</button>
+	<button class="alert-btn" type="button" id="change-checkboxes">Дальше</button>
 </section>
 
 		<!-- ! Ninth page -->
 <section class="p-inspirations p--padding" data-page="8">
-	<h2 class="title" for="name">Что вдохновляет тебя играть на гитаре:</h2>
+	<h2 class="title">Что вдохновляет тебя играть на гитаре:</h2>
 	<div class="inspirations" id="during-btns">
 		<label class="md-width">
-			<input value="play-anytime" type="checkbox" checked>
+			<input value="play-anytime" type="checkbox">
 			<span>Сыграть крутую песню в любое время</span>
 		</label>
 		<div class="inspirations-items-wrapper">
@@ -366,7 +373,7 @@
 				<span>Играть вместе с другими</span>
 			</label>
 			<label class="min-size">
-				<input value="play-for-girl" type="checkbox" checked>
+				<input value="play-for-girl" type="checkbox">
 				<span>Очаровать девушку</span>
 			</label>
 		</div>
@@ -376,7 +383,7 @@
 		</label>
 		<div class="inspirations-items-wrapper">
 			<label class="sm-width">
-				<input value="create-own" type="checkbox" checked>
+				<input value="create-own" type="checkbox">
 				<span>Сочинять свою музыку</span>
 			</label>
 			<label class="sm-width">
@@ -465,7 +472,7 @@
 	<button class="alert-btn">Начать!</button>
 </section>
 	</main>
-	<script src="./js/main.js?t=1644262928043"></script>
+	<script src="./js/main.js?t=1644347995443"></script>
 </body>
 
 </html>
