@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
   (() => {
     const observer = new MutationObserver(function (mutations) {
       mutations.forEach(function (mutation) {
-        console.log(formData);
+        console.log(currentPageIndex);
         if (mutation.type === "attributes") {
           // Change current page
           const previousPage = document.querySelector(
@@ -182,7 +182,6 @@ document.addEventListener("DOMContentLoaded", function (e) {
     const hasGuitarForm = document.getElementById("has-guitar-btns");
     hasGuitarForm.addEventListener("click", (event) => {
       if (event.target.closest("[data-next-btn]")) {
-        console.log(event.target);
         if (!event.target.dataset.hasguitar) {
           formData.hasGuitar = event.target.parentElement.dataset.hasguitar;
           if (!formData.hasGuitar) {
@@ -258,7 +257,13 @@ document.addEventListener("DOMContentLoaded", function (e) {
         span.previousElementSibling.checked = false;
       }
 
-      btn.setAttribute("data-next-btn", "8");
+      setTimeout(() => {
+        if (currentPageIndex === 7) {
+          currentPageIndex++;
+          btn.setAttribute("data-next-btn", "8");
+          checkboxesPage.setAttribute("data-page", "8");
+        }
+      }, 1);
     });
   })();
 });
