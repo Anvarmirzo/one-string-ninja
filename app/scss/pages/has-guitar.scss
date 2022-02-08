@@ -64,3 +64,28 @@
 .smile-icon {
   min-width: 44px;
 }
+
+.p-play-guitar {
+  &.active {
+    .play-guitar-hint {
+      transform: translateY(0%);
+    }
+  }
+}
+
+.play-guitar-hint {
+  transform: translateY(-50%);
+}
+
+.p-duration {
+  &.active {
+    .p-duration-hint {
+      transform: translateY(0);
+    }
+  }
+}
+
+.p-duration-hint {
+  transform: translateY(50%);
+  transition: all 0.5s;
+}
