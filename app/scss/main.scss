@@ -52,6 +52,19 @@ section {
 
 button {
   cursor: pointer;
+  outline: none;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+input {
+  outline: none;
+
+  &:focus {
+    outline: none;
+  }
 }
 
 img {
