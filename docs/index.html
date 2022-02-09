@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>One-String Ninja</title>
-  <link rel="stylesheet" href="./css/main.css?t=1644432422646">
+  <link rel="stylesheet" href="./css/main.css?t=1644435828833">
 </head>
 
 <body>
@@ -71,10 +71,10 @@
 <section class="p-name p--padding" data-page="1">
 	<form id="name-form">
 		<div id="test"></div>
-		<label class="title" for="name">Как тебя зовут ?</label>
-		<input class="input" type="text" name="name" id="name" placeholder="Имя или псевдоним" >
+		<label class="title" for="name-form-input">Как тебя зовут ?</label>
+		<input class="input" type="text" name="name" id="name-form-input" placeholder="Имя или псевдоним" required>
 		<p>Напиши свое настоящее имя или творческий псевдоним</p>
-		<button data-next-btn="2" class="alert-btn">Дальше</button>
+		<button data-next-btn="2" class="alert-btn" id="name-form-btn" data-disabled="true">Дальше</button>
 	</form>
 </section>
 
@@ -263,7 +263,7 @@
 		<article>
 			<h3>Ваш инструмент в плохой форме</h3>
 			<p>Залог хорошего звучания это настроенная гитара.</p>
-			<p>Настройка занимает пару минут, а наслаждаться игрой можно часами.</p>
+			<p>Настройка занимает пару минут,<br> а наслаждаться игрой можно часами.</p>
 		</article>
 	</div>
 </section>
@@ -415,9 +415,9 @@
 <section class="p-name p--padding" data-page="11">
   <form id="email-form">
     <div id="test"></div>
-    <label class="title" for="email">Введи свой Email<br> и получи Доступ к 100+ Видеоурокам</label>
-    <input class="input" type="email" name="email" id="email" placeholder="Email">
-    <button data-next-btn="11" class="alert-btn">Дальше</button>
+    <label class="title" for="email-form-input">Введи свой Email<br> и получи Доступ к 100+ Видеоурокам</label>
+    <input class="input" type="email" name="email" id="email-form-input" placeholder="Email" required>
+    <button data-next-btn="11" class="alert-btn" id="email-form-btn" data-disabled="true">Дальше</button>
   </form>
 </section>
 
@@ -476,7 +476,7 @@
   <a href="http://" target="_blank" rel="noopener noreferrer" class="alert-btn link">Смотреть видеоуроки</a>
 </section>
 </main>
-<script src="./js/main.js?t=1644432422646"></script>
+<script src="./js/main.js?t=1644435828833"></script>
 </body>
 
 </html>
