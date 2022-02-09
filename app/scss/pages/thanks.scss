@@ -3,7 +3,20 @@
   flex-direction: column;
   transition: opacity $page_transition;
 
+
   &.active {
+    &.p-last.p-year {
+      padding-top: 84px !important;
+      padding-bottom: 56px;
+
+      .title{
+        margin-bottom: 24px;
+      }
+
+      .thanks__img{
+        margin-bottom: 40px;
+      }
+    }
 
     .alert-btn {
       transform: translateY(0);

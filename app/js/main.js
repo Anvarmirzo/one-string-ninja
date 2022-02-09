@@ -156,8 +156,8 @@ document.addEventListener("DOMContentLoaded", function () {
         if (currentSlide < 3) {
           currentSlide++;
         } else {
-          const currentPage = document.querySelector('[data-page="0"]'),
-            nextPage = document.querySelector('[data-page="1"]');
+          const currentPage = document.querySelector('[data-page="13"]'),
+            nextPage = document.querySelector('[data-page="14"]');
           currentPage.classList.remove("active");
           nextPage.classList.add("active");
 
