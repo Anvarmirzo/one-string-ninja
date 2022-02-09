@@ -51,6 +51,7 @@
   }
 
   .fifth {
+    flex: 1 0 100%;
     max-width: 196px;
   }
 
@@ -64,11 +65,13 @@
       opacity: 0;
       visibility: hidden;
       height: 0;
+      padding: 0;
 
       &.create {
         opacity: 1;
         visibility: visible;
         height: auto;
+        padding: 10px 12px;
       }
     }
   }

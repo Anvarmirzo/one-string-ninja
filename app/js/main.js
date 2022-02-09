@@ -18,8 +18,8 @@ document.addEventListener("DOMContentLoaded", function (e) {
   (() => {
     const pages = document.querySelectorAll("[data-page"),
       allPagesCount = document.getElementById("pages-count");
-    allPagesCount.textContent = +pages.length - 1;
-    pagesLength = +pages.length - 1;
+    allPagesCount.textContent = +pages.length;
+    pagesLength = +pages.length;
   })();
 
   // Page change listener
