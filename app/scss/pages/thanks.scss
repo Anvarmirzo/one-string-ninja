@@ -3,6 +3,13 @@
   flex-direction: column;
   transition: opacity $page_transition;
 
+  &.active {
+
+    .alert-btn {
+      transform: translateY(0);
+    }
+  }
+
   p {
     font-weight: 500;
     font-size: 18px;
@@ -13,6 +20,8 @@
   .alert-btn {
     width: 100%;
     margin-top: auto;
+    transform: translateY(-100px);
+    transition: all 0.5s;
   }
 }
 

@@ -1,3 +1,15 @@
+.p-terms {
+  &.p-thought.active {
+    .title {
+      height: auto;
+      font-size: 26px;
+      opacity: 1;
+      visibility: visible;
+      margin-bottom: 32px;
+    }
+  }
+}
+
 .terms {
   display: grid;
   gap: 16px;
@@ -55,7 +67,7 @@
     opacity: 0;
 
     &:checked {
-      &~span {
+      & ~ span {
         color: #FFFFFF;
 
         &::after {
