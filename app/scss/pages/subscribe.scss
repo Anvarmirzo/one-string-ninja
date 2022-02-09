@@ -1,0 +1,89 @@
+.p-subscribe {
+  text-align: center;
+
+  &.p-welcome {
+    row-gap: 32px;
+  }
+
+  .title {
+    margin-bottom: 16px;
+  }
+
+  .subtitle {
+    opacity: 0;
+    visibility: hidden;
+    height: 0;
+    transition: opacity 0.5s;
+
+    &.active {
+      opacity: 1;
+      visibility: visible;
+      height: auto;
+      min-height: 60px;
+    }
+  }
+
+  .p-welcome-bottom {
+    display: flex;
+    flex-direction: column;
+    height: 32.75%;
+    min-height: 262px;
+  }
+
+  .price {
+    font-weight: bold;
+    font-size: 26px;
+    line-height: 1.23;
+    text-align: center;
+    color: #3F170D;
+  }
+
+  .p-welcome-nav {
+    display: flex;
+    flex-direction: column;
+    row-gap: 24px;
+  }
+
+  .p-subscribe-menu {
+    width: 80px;
+  }
+
+  .p-welcome__control {
+    &:first-child {
+      left: 0;
+    }
+
+    &:nth-child(2) {
+      left: 42px;
+    }
+
+    &:nth-child(3) {
+      left: 58px;
+    }
+
+    &:last-child {
+      left: 74px;
+    }
+  }
+}
+
+.p-subscribe-top {
+  padding: 0 32px;
+}
+
+.p-subscribe__img {
+  max-width: 230px;
+  max-height: 278px;
+  margin-bottom: 32px;
+}
+
+.subscribe-slider-text {
+  .subtitle {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1.22;
+    text-align: center;
+    color: #3F170D;
+  }
+}
+

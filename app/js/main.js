@@ -1,5 +1,5 @@
-document.addEventListener("DOMContentLoaded", function (e) {
-  ("use strict");
+document.addEventListener("DOMContentLoaded", function () {
+  "use strict";
   // Active page index
   let currentPageIndex = 0;
   let pagesLength = 0;
@@ -16,10 +16,10 @@ document.addEventListener("DOMContentLoaded", function (e) {
 
   // Set pages length
   (() => {
-    const pages = document.querySelectorAll("[data-page"),
+    const pages = document.querySelectorAll("[data-page]"),
       allPagesCount = document.getElementById("pages-count");
-    allPagesCount.textContent = +pages.length;
-    pagesLength = +pages.length;
+    allPagesCount.textContent = +pages.length - 1;
+    pagesLength = +pages.length - 1;
   })();
 
   // Page change listener
@@ -27,19 +27,19 @@ document.addEventListener("DOMContentLoaded", function (e) {
   (() => {
     const observer = new MutationObserver(function (mutations) {
       mutations.forEach(function (mutation) {
-        console.log(currentPageIndex);
         if (mutation.type === "attributes") {
-          // Change current page
-          const previousPage = document.querySelector(
-            `[data-page="${currentPageIndex - 1}"]`
-          );
-          const currentPage = document.querySelector(
-            `[data-page="${currentPageIndex}"]`
-          );
+          if (currentPageIndex !== 8) {
+            // Change current page
+            const previousPage = document.querySelector(
+              `[data-page="${currentPageIndex - 1}"]`
+            );
+            const currentPage = document.querySelector(
+              `[data-page="${currentPageIndex}"]`
+            );
 
-          previousPage.classList.remove("active");
-          currentPage.classList.add("active");
-
+            previousPage.classList.remove("active");
+            currentPage.classList.add("active");
+          }
           // Display progress
           const progress = document.getElementById("progress");
           const bar = document.getElementById("progress-bar-line");
@@ -122,6 +122,70 @@ document.addEventListener("DOMContentLoaded", function (e) {
         case 2:
           allBullets[0].style.left = "32px";
           allBullets[1].style.left = "16px";
+          break;
+
+        default:
+          break;
+      }
+    };
+
+    bulletsWrapper.addEventListener("click", handleClick);
+  })();
+
+  // Subscribe page slider
+  (() => {
+    let currentSlide = 0;
+    const bulletsWrapper = document.getElementById("subscribe-slider__contorls"),
+      textSlides = document.getElementById("subscribe-slider__text").children;
+
+    const handleClick = (event) => {
+      const bullet = event.target.closest("button");
+
+      if (!bullet || !bulletsWrapper.contains(bullet)) return;
+
+      // removing active state from previous slide
+      const allBullets = bulletsWrapper.querySelectorAll("[data-subscribe-control]");
+      allBullets[currentSlide].classList.remove("active");
+      textSlides[currentSlide].classList.remove("active");
+
+      if (bullet.hasAttribute("data-subscribe-control")) {
+        // updating current slide
+        currentSlide = +bullet.getAttribute("data-subscribe-control");
+      } else if (bullet.id === "subscribe-btn") {
+        // handle click on next button
+        if (currentSlide < 3) {
+          currentSlide++;
+        } else {
+          const currentPage = document.querySelector('[data-page="0"]'),
+            nextPage = document.querySelector('[data-page="1"]');
+          currentPage.classList.remove("active");
+          nextPage.classList.add("active");
+
+          currentPageIndex++;
+          currentPageHolder.value = currentPageIndex;
+        }
+      }
+      // setting active state for current slide
+      allBullets[currentSlide].classList.add("active");
+      textSlides[currentSlide].classList.add("active");
+
+      switch (currentSlide) {
+        case 0:
+          break;
+
+        case 1:
+          allBullets[0].style.left = "16px";
+          allBullets[1].style.left = "0";
+          break;
+
+        case 2:
+          allBullets[0].style.left = "32px";
+          allBullets[2].style.left = "16px";
+          break;
+
+        case 3:
+          allBullets[0].style.left = "48px";
+          allBullets[3].style.left = "32px";
           break;
 
         default:
@@ -220,11 +284,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
       event.preventDefault();
       const checkboxes = form.querySelectorAll("[type=checkbox]");
       for (const item of checkboxes) {
-        if (item.checked) {
-          formData.terms[item.value] = true;
-        } else {
-          formData.terms[item.value] = false;
-        }
+        formData.terms[item.value] = !!item.checked;
       }
     });
   })();
@@ -236,7 +296,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
       titles = checkboxesPage.querySelectorAll(".title"),
       btn = document.getElementById("change-checkboxes");
 
-    btn.addEventListener("click", (e) => {
+    btn.addEventListener("click", () => {
       if (!checkboxes.length || titles.length < 2) return;
 
       checkboxesPage.classList.add("second-part");
@@ -262,8 +322,22 @@ document.addEventListener("DOMContentLoaded", function (e) {
           currentPageIndex++;
           btn.setAttribute("data-next-btn", "8");
           checkboxesPage.setAttribute("data-page", "8");
+          currentPageHolder.value = currentPageIndex
         }
       }, 1);
     });
   })();
+
+  // Close progress bar
+  (() => {
+    const closeBtn = document.getElementById("close-progress-btn");
+    closeBtn.addEventListener("click", () => {
+      const progressBar = document.getElementById("progress");
+      console.log('triggered')
+      progressBar.style.opacity = '0';
+      progressBar.style.height = '0';
+      progressBar.style.position = 'absolute';
+      progressBar.style.overflow = 'hidden';
+    });
+  })()
 });
