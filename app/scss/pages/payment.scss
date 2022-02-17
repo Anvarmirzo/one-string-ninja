@@ -1,0 +1,160 @@
+.payment-body {
+  text-align: start;
+
+  .title {
+    margin-bottom: 32px;
+  }
+
+
+}
+
+.payment-cards {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  column-gap: 16px;
+  margin-bottom: 32px;
+
+  input {
+    position: absolute;
+    width: 0;
+    height: 0;
+    opacity: 0;
+
+    &:checked {
+      & ~ span {
+        color: #FFFFFF;
+
+        &::after {
+          background-color: #E23C08;
+        }
+      }
+    }
+  }
+
+  label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 13px 10px;
+    width: 88px;
+    min-width: 88px;
+    height: 64px;
+    background-color: rgba(255, 255, 255, 0.4);
+    box-shadow: 0 4px 16px rgba(101, 34, 13, 0.24);
+    backdrop-filter: blur(8px);
+    border-radius: 16px;
+  }
+}
+
+.visa, .mastercard {
+  width: 52px;
+  height: 29px;
+}
+
+.maestro {
+  width: 68px;
+  height: 38px;
+}
+
+.payment-fields__title {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.22;
+  color: #3F170D;
+  margin-bottom: 24px;
+}
+
+.payment__total {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: bold;
+  font-size: 26px;
+  line-height: 1.23;
+  color: #3F170D;
+
+}
+
+.payment__price {
+  color: #E23C08;
+}
+
+.payment__bottom {
+  .alert-btn {
+    width: 100%;
+  }
+
+  &.p-welcome-bottom {
+    height: 27.875%;
+    min-height: 223px;
+  }
+}
+
+.payment-fields {
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
+
+
+  input {
+    border: 2px solid transparent;
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(8px);
+    border-radius: 16px;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 1.2;
+    padding: 20px 24px;
+    width: 296px;
+    transition: all 0.3s;
+
+    &::placeholder {
+      color: #E1D2CE;
+    }
+
+    &.invalid {
+      border-color: #ED7A41;
+    }
+  }
+}
+
+.payment-fields-middle {
+  display: flex;
+  align-items: center;
+  column-gap: 16px;
+
+  input {
+    width: 140px;
+  }
+}
+
+.error-msg {
+  position: absolute;
+  top: -1600px;
+  left: 32px;
+  right: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 16px;
+  padding: 14px 24px;
+  background-color: rgba(226, 60, 8, 0.6);
+  backdrop-filter: blur(8px);
+  border-radius: 16px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.25;
+  color: #FFFFFF;
+  transition: all 0.3s;
+
+  &.active {
+    top: 16px;
+  }
+
+  img {
+    width: 24px;
+    height: 24px;
+    min-width: 24px;
+  }
+}
