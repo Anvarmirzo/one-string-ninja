@@ -1,5 +1,8 @@
+import {inputMask} from './cardValidators/inputMask';
+
 document.addEventListener('DOMContentLoaded', function () {
   'use strict';
+
   // Active page index
   let currentPageIndex = 0;
   let pagesLength = 0;
@@ -62,7 +65,7 @@ document.addEventListener('DOMContentLoaded', function () {
   // Welcome page slider
   (() => {
     let currentSlide = 0;
-    const bulletsWrapper = document.getElementById('welcome-slider__contorls'),
+    const bulletsWrapper = document.getElementById('welcome-slider__controls'),
       imageSlides = document.getElementById('welcome-slider__images').children,
       textSlides = document.getElementById('welcome-slider__text').children;
 
@@ -127,7 +130,7 @@ document.addEventListener('DOMContentLoaded', function () {
   // Subscribe page slider
   (() => {
     let currentSlide = 0;
-    const bulletsWrapper = document.getElementById('subscribe-slider__contorls'),
+    const bulletsWrapper = document.getElementById('subscribe-slider__controls'),
       textSlides = document.getElementById('subscribe-slider__text').children;
 
     const handleClick = (event) => {
@@ -342,11 +345,138 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     });
 
-    nameBtn.addEventListener('click', () => {
-
-    });
+    // nameBtn.addEventListener('click', () => {
+    //
+    // });
   };
 
   fieldValidator('name-form-input', 'name-form-btn');
   fieldValidator('email-form-input', 'email-form-btn');
+
+  /* Card validator */
+  (() => {
+    const paymentData = {
+      cardType: '',
+      cardNumber: '',
+      cardExpiry: '',
+      cardCvc: '',
+      cardName: '',
+      validFields: []
+    };
+    const masterCardRegex = /^5[1-5][0-9]{14}$|^2(?:2(?:2[1-9]|[3-9][0-9])|[3-6][0-9][0-9]|7(?:[01][0-9]|20))[0-9]{12}$/;
+    const visaRegex = /^4[0-9]{12}(?:[0-9]{3})?$/;
+    const maestroRegex = /^(5018|5081|5044|5020|5038|603845|6304|6759|676[1-3]|6799|6220|504834|504817|504645)[0-9]{8,15}$/;
+    const expiryDateRegex = /^(0[1-9]|1[0-2])\/?([0-9]{4}|[0-9]{2})$/mg;
+    const ccCVCPattern = /^[0-9]{3,4}$/;
+
+    (function radioHandler() {
+      const radiosWrapper = document.getElementById('payment-radios');
+      const radios = radiosWrapper.querySelectorAll('input[type="radio"]');
+
+
+      /* Handle payment method */
+      for (const radio of radios) {
+        radio.addEventListener('input', (e) => {
+          paymentData.cardType = e.target.value;
+        });
+      }
+    })();
+
+    (function inputHandler() {
+      const fieldsWrapper = document.getElementById('payment-fields');
+      const fields = fieldsWrapper.querySelectorAll('input[type="text"]');
+      const btn = document.getElementById('payment-submit-btn');
+      const errorMessage = document.getElementById('error-msg');
+
+      const [cardNumber, cardExpiry, cardCvc, cardName] = fields;
+      inputMask(cardNumber, cardExpiry, cardCvc);
+
+      for (const field of fields) {
+        field.addEventListener('input', (e) => {
+          switch (Object.keys(field.dataset)[0]) {
+            case 'number':
+              paymentData.cardNumber = e.target.value.split(' ').join('');
+              break;
+
+            case 'expiry':
+              paymentData.cardExpiry = e.target.value;
+              break;
+
+            case 'cvc':
+              paymentData.cardCvc = e.target.value;
+              break;
+
+            case 'name':
+              paymentData.cardName = e.target.value;
+              break;
+            default:
+              break;
+          }
+        });
+      }
+      btn.addEventListener('click', () => {
+
+        /* Validation number */
+        if (paymentData.cardNumber.match(masterCardRegex) || paymentData.cardNumber.match(visaRegex) || paymentData.cardNumber.match(maestroRegex)) {
+          if (cardNumber.classList.contains('invalid')) {
+            cardNumber.classList.remove('invalid');
+          }
+
+          if (!paymentData.validFields.includes('cardNumber')) {
+            paymentData.validFields.push('cardNumber');
+          }
+
+        } else {
+          errorMessage.classList.add('active');
+          cardNumber.classList.add('invalid');
+        }
+
+        /* Validation expiry date */
+        if (paymentData.cardExpiry.match(expiryDateRegex)) {
+          if (!paymentData.validFields.includes('cardExpiry')) {
+            paymentData.validFields.push('cardExpiry');
+          }
+          if (cardExpiry.classList.contains('invalid')) {
+            cardExpiry.classList.remove('invalid');
+          }
+        } else {
+          errorMessage.classList.add('active');
+          cardExpiry.classList.add('invalid');
+        }
+
+        /* Validation СVC */
+        if (paymentData.cardCvc.match(ccCVCPattern)) {
+          if (!paymentData.validFields.includes('cardCvc')) {
+            paymentData.validFields.push('cardCvc');
+          }
+          if (cardCvc.classList.contains('invalid')) {
+            cardCvc.classList.remove('invalid');
+          }
+        } else {
+          errorMessage.classList.add('active');
+          cardCvc.classList.add('invalid');
+        }
+
+        /* Validation name*/
+        if (paymentData.cardName.length > 2) {
+          if (!paymentData.validFields.includes('cardName')) {
+            paymentData.validFields.push('cardName');
+          }
+          if (cardName.classList.contains('invalid')) {
+            cardName.classList.remove('invalid');
+          }
+        } else {
+          errorMessage.classList.add('active');
+          cardName.classList.add('invalid');
+        }
+
+        /* Hide error message */
+        if (paymentData.validFields.length === 4 && errorMessage.classList.contains('active')) {
+          errorMessage.classList.remove('active');
+          currentPageIndex++;
+          currentPageHolder.value = currentPageIndex
+        }
+      });
+    })();
+  })();
 });

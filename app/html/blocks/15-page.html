@@ -1,9 +1,39 @@
-<!-- ! Fifteenth page -->
-<section class="p-year p-thanks p-last p--padding" data-page="14">
-  <h2 class="title">Спасибо!</h2>
-  <p>Смотри видеоуроки и играй мелодии из 100+ всемирно известных песен.</p>
-  <div class="thanks__img">
-    <img src="./img/finish2.svg" alt="">
+<!-- ! Fifteenth Page -->
+<section class="p-welcome p-subscribe" data-page="14">
+  <div class="payment-body">
+    <h2 class="title">Оплата</h2>
+    <div class="payment-cards" id="payment-radios">
+      <label class="payment-card">
+        <input value="visa" name="card" type="radio">
+        <img class="visa" src="./img/payments/visa.png" alt="Visa">
+      </label>
+      <label class="payment-card mastercard">
+        <input value="mastercard" name="card" type="radio">
+        <img class="mastercard" src="./img/payments/mastercard.png" alt="Mastercard">
+      </label>
+      <label class="payment-card">
+        <input value="maestro" name="card" type="radio">
+        <img class="maestro" src="./img/payments/maestro.png" alt="Maestro">
+      </label>
+    </div>
+    <p class="payment-fields__title">Данные карты</p>
+    <div class="payment-fields" id="payment-fields">
+      <input type="text" data-number="1" placeholder="ХХХХ ХХХХ ХХХХ ХХХХ" maxlength="19">
+      <div class="payment-fields-middle">
+        <input type="text" data-expiry="1" placeholder="ММ/ГГ" maxlength="5">
+        <input type="text" data-cvc="1" placeholder="CVV2" maxlength="3">
+      </div>
+      <input type="text" data-name="1" placeholder="Имя владельца">
+    </div>
   </div>
-  <a href="http://" target="_blank" rel="noopener noreferrer" class="alert-btn link">Смотреть видеоуроки</a>
+  <div class="p-welcome-bottom payment__bottom">
+    <p class="payment__total">Всего <span class="payment__price">699 RUB</span></p>
+    <nav class="p-welcome-nav p-subscribe-nav">
+      <button class="alert-btn" id="payment-submit-btn" type="button">Оплатить</button>
+    </nav>
+  </div>
+  <div class="error-msg" id="error-msg">
+    <img src="./img/warning.png" alt="">
+    Исправьте&nbsp;номер&nbsp;карты
+  </div>
 </section>

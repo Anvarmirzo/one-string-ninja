@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>One-String Ninja</title>
-  <link rel="stylesheet" href="./css/main.css?t=1644510202519">
+  <link rel="stylesheet" href="./css/main.css?t=1645135369759">
 </head>
 
 <body>
@@ -50,7 +50,7 @@
 				<h1 class="title">Ты сможешь сыграть известную песню на гитаре за 5 минут с нуля!</h1>
 			</article>
 		</div>
-		<nav id="welcome-slider__contorls" class="p-welcome-nav">
+		<nav id="welcome-slider__controls" class="p-welcome-nav">
 			<div class="p-welcome-menu">
 				<button class="p-welcome__control active" data-control="0" type="button">
 					<span class="sr-only">1-slide</span>
@@ -447,7 +447,7 @@
   </div>
   <div class="p-welcome-bottom">
     <span class="price">699 RUB/месяц</span>
-    <nav id="subscribe-slider__contorls" class="p-welcome-nav p-subscribe-nav">
+    <nav id="subscribe-slider__controls" class="p-welcome-nav p-subscribe-nav">
       <div class="p-welcome-menu p-subscribe-menu">
         <button class="p-welcome__control active" data-subscribe-control="0" type="button">
           <span class="sr-only">1-slide</span>
@@ -466,8 +466,48 @@
   </div>
 </section>
 
-  <!-- ! Fifteenth page -->
-<section class="p-year p-thanks p-last p--padding" data-page="14">
+  <!-- ! Fifteenth Page -->
+<section class="p-welcome p-subscribe" data-page="14">
+  <div class="payment-body">
+    <h2 class="title">Оплата</h2>
+    <div class="payment-cards" id="payment-radios">
+      <label class="payment-card">
+        <input value="visa" name="card" type="radio">
+<picture><source srcset="./img/payments/visa.avif" type="image/avif"><source srcset="./img/payments/visa.webp" type="image/webp"><img class="visa" src="./img/payments/visa.png" alt="Visa"></picture>
+      </label>
+      <label class="payment-card mastercard">
+        <input value="mastercard" name="card" type="radio">
+<picture><source srcset="./img/payments/mastercard.avif" type="image/avif"><source srcset="./img/payments/mastercard.webp" type="image/webp"><img class="mastercard" src="./img/payments/mastercard.png" alt="Mastercard"></picture>
+      </label>
+      <label class="payment-card">
+        <input value="maestro" name="card" type="radio">
+<picture><source srcset="./img/payments/maestro.avif" type="image/avif"><source srcset="./img/payments/maestro.webp" type="image/webp"><img class="maestro" src="./img/payments/maestro.png" alt="Maestro"></picture>
+      </label>
+    </div>
+    <p class="payment-fields__title">Данные карты</p>
+    <div class="payment-fields" id="payment-fields">
+      <input type="text" data-number="1" placeholder="ХХХХ ХХХХ ХХХХ ХХХХ" maxlength="19">
+      <div class="payment-fields-middle">
+        <input type="text" data-expiry="1" placeholder="ММ/ГГ" maxlength="5">
+        <input type="text" data-cvc="1" placeholder="CVV2" maxlength="3">
+      </div>
+      <input type="text" data-name="1" placeholder="Имя владельца">
+    </div>
+  </div>
+  <div class="p-welcome-bottom payment__bottom">
+    <p class="payment__total">Всего <span class="payment__price">699 RUB</span></p>
+    <nav class="p-welcome-nav p-subscribe-nav">
+      <button class="alert-btn" id="payment-submit-btn" type="button">Оплатить</button>
+    </nav>
+  </div>
+  <div class="error-msg" id="error-msg">
+<picture><source srcset="./img/warning.avif" type="image/avif"><source srcset="./img/warning.webp" type="image/webp"><img src="./img/warning.png" alt=""></picture>
+    Исправьте&nbsp;номер&nbsp;карты
+  </div>
+</section>
+
+  <!-- ! Sixteenth page -->
+<section class="p-year p-thanks p-last p--padding" data-page="15">
   <h2 class="title">Спасибо!</h2>
   <p>Смотри видеоуроки и играй мелодии из 100+ всемирно известных песен.</p>
   <div class="thanks__img">
@@ -476,7 +516,7 @@
   <a href="http://" target="_blank" rel="noopener noreferrer" class="alert-btn link">Смотреть видеоуроки</a>
 </section>
 </main>
-<script src="./js/main.js?t=1644510202519"></script>
+<script src="./js/main.js?t=1645135369759"></script>
 </body>
 
 </html>
